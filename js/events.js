@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Greater Grace Embassy Church International (GGECI)
  * Events Calendar & RSVP Booking (Vanilla JavaScript)
  */
@@ -13,7 +13,7 @@ const FALLBACK_EVENTS = [
     description: "A special celebration and thanksgiving service dedicated to our children and teenagers, thanking God for their growth, wisdom, academic excellence, and divine protection.",
     speaker: "Children & Youth Department Ministers / Senior Pastor",
     category: "Thanksgiving",
-    image: "/assets/images/fellowship.jpg"
+    image: "/images/fellowship.jpg"
   },
   {
     id: "event-6",
@@ -24,7 +24,7 @@ const FALLBACK_EVENTS = [
     description: "Annual whole-church thanksgiving service celebrating God’s faithfulness, supernatural grace, open doors, and miraculous breakthroughs in the lives of all members and families.",
     speaker: "Pastor Justina Eze & Pastoral Team",
     category: "Thanksgiving",
-    image: "/assets/images/hero-bg.jpg"
+    image: "/images/hero-bg.jpg"
   },
   {
     id: "event-7",
@@ -35,7 +35,7 @@ const FALLBACK_EVENTS = [
     description: "A joyful celebration honoring God for the life, leadership, and visionary ministry of our beloved Senior Pastor. Come celebrate and partake in the prophetic blessing.",
     speaker: "Church Leadership & Guest Ministers",
     category: "Celebration",
-    image: "/assets/images/pst-jk-eze.jpg"
+    image: "/images/pst-jk-eze.jpg"
   },
   {
     id: "event-8",
@@ -46,7 +46,7 @@ const FALLBACK_EVENTS = [
     description: "An evening of festive carols, candlelight adoration, special choir performances, and joyful celebration of the birth of our Savior, Jesus Christ.",
     speaker: "GGECI Choir & Pastoral Team",
     category: "Christmas",
-    image: "/assets/images/sermon-banner.jpg"
+    image: "/images/sermon-banner.jpg"
   },
   {
     id: "event-9",
@@ -57,7 +57,7 @@ const FALLBACK_EVENTS = [
     description: "Celebrate the glorious birth of Jesus Christ with joyous praise, thanksgiving, communion, and celebration of the unconditional gift of salvation.",
     speaker: "Pastor Justina Eze",
     category: "Christmas",
-    image: "/assets/images/fellowship.jpg"
+    image: "/images/fellowship.jpg"
   },
   {
     id: "event-10",
@@ -68,7 +68,7 @@ const FALLBACK_EVENTS = [
     description: "Transition victoriously into the New Year with prevailing prayer, prophetic declarations, uninhibited praise, and receiving God's theme and direction for 2027.",
     speaker: "Pastor Justina Eze & Pastoral Team",
     category: "Crossover / Vigil",
-    image: "/assets/images/hero-bg.jpg"
+    image: "/images/hero-bg.jpg"
   }
 ];
 
@@ -123,7 +123,7 @@ function renderEvents(events) {
   container.innerHTML = events.map(e => `
     <article class="card card-media" data-id="${e.id}">
       <div class="card-image-wrap">
-        <img src="${e.image || '/assets/images/hero-bg.jpg'}" alt="${e.title}" loading="lazy">
+        <img src="${e.image || '/images/hero-bg.jpg'}" alt="${e.title}" loading="lazy">
         <div class="card-badge-overlay">
           <span class="badge badge-gold">${e.category || 'Special Program'}</span>
         </div>
@@ -230,3 +230,4 @@ function escapeHtml(str) {
   if (!str) return '';
   return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
+

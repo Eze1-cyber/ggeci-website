@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Greater Grace Embassy Church International (GGECI)
  * Sermons Archive & Media Streaming (Vanilla JavaScript)
  */
@@ -70,7 +70,7 @@ So don’t give grudgingly. Give with expectation, give with thanksgiving, and g
     audioUrl: "",
     videoUrl: "",
     category: "Faith & Hope",
-    thumbnail: "/assets/images/sermon-banner.jpg",
+    thumbnail: "/images/sermon-banner.jpg",
     status: "published",
     createdAt: "2026-09-21T10:00:00Z"
   },
@@ -134,7 +134,7 @@ GOD BLESS YOU`,
     audioUrl: "",
     videoUrl: "",
     category: "Faith & Hope",
-    thumbnail: "/assets/images/fellowship.jpg",
+    thumbnail: "/images/fellowship.jpg",
     status: "published",
     createdAt: "2026-09-06T10:00:00Z"
   }
@@ -201,7 +201,7 @@ function renderSermons(sermons) {
   container.innerHTML = sermons.map(s => `
     <article class="card card-media" data-id="${s.id}">
       <div class="card-image-wrap">
-        <img src="${s.thumbnail || '/assets/images/sermon-banner.jpg'}" alt="${s.title}" loading="lazy">
+        <img src="${s.thumbnail || '/images/sermon-banner.jpg'}" alt="${s.title}" loading="lazy">
         <div class="card-badge-overlay">
           <span class="badge badge-orange">${s.category || 'Sunday Message'}</span>
         </div>
@@ -357,3 +357,4 @@ function truncateText(text, maxLen = 120) {
   if (text.length <= maxLen) return text;
   return text.substr(0, maxLen).trim() + '...';
 }
+

@@ -1,4 +1,4 @@
-// api/sermons.js
+﻿// api/sermons.js
 // Handles sermon retrieval for public and CRUD management for admin
 const db = require('./db');
 
@@ -70,7 +70,7 @@ module.exports = async function handler(req, res) {
       audioUrl: (audioUrl || '').trim(),
       videoUrl: (videoUrl || '').trim(),
       category: category || 'Sunday Message',
-      thumbnail: thumbnail || '/assets/images/sermon-banner.jpg',
+      thumbnail: thumbnail || '/images/sermon-banner.jpg',
       status: status === 'draft' ? 'draft' : 'published'
     });
 
@@ -105,3 +105,4 @@ module.exports = async function handler(req, res) {
 
   return res.status(405).json({ error: 'Method Not Allowed' });
 };
+

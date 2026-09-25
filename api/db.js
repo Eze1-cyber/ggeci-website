@@ -1,4 +1,4 @@
-// api/db.js
+﻿// api/db.js
 // Unified, resilient data and authentication persistence layer for GGECI
 // Works seamlessly in local development and Vercel serverless functions
 
@@ -30,7 +30,7 @@ const INITIAL_DATA = {
       audioUrl: "https://actions.google.com/sounds/v1/ambiences/outdoor_evening_crickets.ogg",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       category: "Grace & Faith",
-      thumbnail: "/assets/images/sermon-banner.jpg",
+      thumbnail: "/images/sermon-banner.jpg",
       status: "published",
       createdAt: "2026-09-20T10:00:00Z"
     },
@@ -44,7 +44,7 @@ const INITIAL_DATA = {
       audioUrl: "",
       videoUrl: "",
       category: "Deliverance",
-      thumbnail: "/assets/images/hero-bg.jpg",
+      thumbnail: "/images/hero-bg.jpg",
       status: "published",
       createdAt: "2026-09-13T10:00:00Z"
     },
@@ -58,7 +58,7 @@ const INITIAL_DATA = {
       audioUrl: "",
       videoUrl: "",
       category: "Prophetic",
-      thumbnail: "/assets/images/fellowship.jpg",
+      thumbnail: "/images/fellowship.jpg",
       status: "published",
       createdAt: "2026-09-06T10:00:00Z"
     },
@@ -72,7 +72,7 @@ const INITIAL_DATA = {
       audioUrl: "",
       videoUrl: "",
       category: "Prayer & Intercession",
-      thumbnail: "/assets/images/sermon-banner.jpg",
+      thumbnail: "/images/sermon-banner.jpg",
       status: "published",
       createdAt: "2026-08-30T10:00:00Z"
     },
@@ -85,7 +85,7 @@ const INITIAL_DATA = {
       audioUrl: "",
       videoUrl: "",
       category: "Faith & Hope",
-      thumbnail: "/assets/images/sermon-banner.jpg",
+      thumbnail: "/images/sermon-banner.jpg",
       status: "published",
       createdAt: "2026-09-21T10:00:00Z"
     },
@@ -99,7 +99,7 @@ const INITIAL_DATA = {
       audioUrl: "",
       videoUrl: "",
       category: "Faith & Hope",
-      thumbnail: "/assets/images/fellowship.jpg",
+      thumbnail: "/images/fellowship.jpg",
       status: "published",
       createdAt: "2026-09-06T10:00:00Z"
     }
@@ -114,7 +114,7 @@ const INITIAL_DATA = {
       description: "A special celebration and thanksgiving service dedicated to our children and teenagers, thanking God for their growth, wisdom, academic excellence, and divine protection.",
       speaker: "Children & Youth Department Ministers / Senior Pastor",
       category: "Thanksgiving",
-      image: "/assets/images/fellowship.jpg",
+      image: "/images/fellowship.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -128,7 +128,7 @@ const INITIAL_DATA = {
       description: "Annual whole-church thanksgiving service celebrating God’s faithfulness, supernatural grace, open doors, and miraculous breakthroughs in the lives of all members and families.",
       speaker: "Pastor Justina Eze & Pastoral Team",
       category: "Thanksgiving",
-      image: "/assets/images/hero-bg.jpg",
+      image: "/images/hero-bg.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -142,7 +142,7 @@ const INITIAL_DATA = {
       description: "A joyful celebration honoring God for the life, leadership, and visionary ministry of our beloved Senior Pastor. Come celebrate and partake in the prophetic blessing.",
       speaker: "Church Leadership & Guest Ministers",
       category: "Celebration",
-      image: "/assets/images/pst-jk-eze.jpg",
+      image: "/images/pst-jk-eze.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -156,7 +156,7 @@ const INITIAL_DATA = {
       description: "An evening of festive carols, candlelight adoration, special choir performances, and joyful celebration of the birth of our Savior, Jesus Christ.",
       speaker: "GGECI Choir & Pastoral Team",
       category: "Christmas",
-      image: "/assets/images/sermon-banner.jpg",
+      image: "/images/sermon-banner.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -170,7 +170,7 @@ const INITIAL_DATA = {
       description: "Celebrate the glorious birth of Jesus Christ with joyous praise, thanksgiving, communion, and celebration of the unconditional gift of salvation.",
       speaker: "Pastor Justina Eze",
       category: "Christmas",
-      image: "/assets/images/fellowship.jpg",
+      image: "/images/fellowship.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -184,7 +184,7 @@ const INITIAL_DATA = {
       description: "Transition victoriously into the New Year with prevailing prayer, prophetic declarations, uninhibited praise, and receiving God's theme and direction for 2027.",
       speaker: "Pastor Justina Eze & Pastoral Team",
       category: "Crossover / Vigil",
-      image: "/assets/images/hero-bg.jpg",
+      image: "/images/hero-bg.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -198,7 +198,7 @@ const INITIAL_DATA = {
       description: "Our flagship annual holy convocation featuring seasoned ministers of the gospel from across Nigeria and abroad. 4 days of apostolic grace, miracles, and impartation.",
       speaker: "Host Pastor & Guest Apostolic Speakers",
       category: "Convention",
-      image: "/assets/images/sermon-banner.jpg",
+      image: "/images/sermon-banner.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-10T12:00:00Z"
@@ -212,7 +212,7 @@ const INITIAL_DATA = {
       description: "All-night praise, prophetic decrees, intercession, and breakthrough miracles under the atmosphere of holy adoration.",
       speaker: "GGECI Choir & Ministers",
       category: "Vigil / Praise",
-      image: "/assets/images/hero-bg.jpg",
+      image: "/images/hero-bg.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-15T09:00:00Z"
@@ -437,3 +437,4 @@ const db = {
 };
 
 module.exports = db;
+

@@ -1,4 +1,4 @@
-// api/events.js
+﻿// api/events.js
 // Handles church events calendar, registrations, and admin management
 const db = require('./db');
 
@@ -98,7 +98,7 @@ module.exports = async function handler(req, res) {
       description: (description || '').trim(),
       speaker: (speaker || 'Pastoral Board').trim(),
       category: category || 'Special Service',
-      image: image || '/assets/images/hero-bg.jpg',
+      image: image || '/images/hero-bg.jpg',
       status: status === 'draft' ? 'draft' : 'published',
       registrations: []
     });
@@ -133,3 +133,4 @@ module.exports = async function handler(req, res) {
 
   return res.status(405).json({ error: 'Method Not Allowed' });
 };
+
