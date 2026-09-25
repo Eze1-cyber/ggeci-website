@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Contact Greater Grace Embassy Church International (GGECI) located at 1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba, Lagos, Nigeria. Send us a message or find driving directions.">
+  <title>Contact Us & Directions | Greater Grace Embassy Church International</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="navbar" id="site-header">
+    <div class="container nav-container">
+      <a href="/index.html" class="brand-logo" aria-label="GGECI Home">
+        <img src="/assets/images/logo.png" alt="Greater Grace Embassy Church International Logo">
+        <div class="brand-title">
+          <span class="brand-name">GREATER GRACE</span>
+          <span class="brand-sub">EMBASSY CHURCH INT'L</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/sermons.html" class="nav-link">Sermons</a></li>
+          <li><a href="/events.html" class="nav-link">Events</a></li>
+          <li><a href="/prayer-request.html" class="nav-link">Prayer Request</a></li>
+          <li><a href="/counselling.html" class="nav-link">Counselling</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="/giving.html" class="btn btn-accent btn-sm">Give Online</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-header" aria-label="Contact Header Banner">
+      <div class="container">
+        <h1 class="page-header-title">Contact & Directions</h1>
+        <p class="page-header-subtitle">
+          We would love to hear from you. Reach out to our pastoral team, visit our sanctuary in Abule-Egba, or send us
+          an inquiry.
+        </p>
+        <div class="breadcrumb">
+          <a href="/index.html">Home</a>
+          <span>/</span>
+          <span>Contact Us</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Sanctuary Details Section -->
+    <section class="section" aria-label="Contact Details">
+      <div class="container">
+        <div class="grid-2" style="align-items:flex-start; margin-bottom:4rem;">
+          <!-- Left: Contact Form -->
+          <div class="form-card">
+            <span class="section-tag">Reach Out Directly</span>
+            <h2 style="font-size:1.85rem; margin-bottom:1rem; color:var(--dark-navy);">Send Us a Message</h2>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;">
+              Have questions about church membership, dedications, welfare, or upcoming services? Fill out this form and
+              our administrative secretariat will get in touch.
+            </p>
+
+            <!-- Alerts -->
+            <div id="contact-alert-loading" class="form-alert form-alert-loading">
+              <span class="spinner spinner-primary"></span>
+              <span>Sending your message to church administration...</span>
+            </div>
+            <div id="contact-alert-success" class="form-alert form-alert-success"></div>
+            <div id="contact-alert-error" class="form-alert form-alert-error"></div>
+
+            <form id="contact-form" novalidate>
+              <div style="display:none;" aria-hidden="true">
+                <input type="text" id="contact-company" name="company" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="contact-name" class="form-control" placeholder="e.g. Deaconess Sarah Johnson"
+                  required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="sarah@example.com" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-phone">Phone Number</label>
+                  <input type="tel" id="contact-phone" class="form-control" placeholder="+234 803 123 4567">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" class="form-control"
+                  placeholder="e.g. Inquiry about Sunday Services / Child Dedication">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message <span class="required">*</span></label>
+                <textarea id="contact-message" class="form-textarea" rows="5"
+                  placeholder="Write your message or inquiry here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg" id="contact-submit-btn">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Sanctuary Information & Office Hours -->
+          <div>
+            <div class="card" style="margin-bottom:2rem;">
+              <span class="badge badge-gold" style="margin-bottom:0.75rem;">Physical Location</span>
+              <h3 style="font-size:1.4rem; color:var(--dark-navy); margin-bottom:1rem;">Church Headquarters</h3>
+
+              <div style="display:flex; flex-direction:column; gap:1.25rem;">
+                <div style="display:flex; align-items:flex-start; gap:0.75rem;">
+                  <div class="service-icon-box" style="width:38px; height:38px;">
+                    <img src="/assets/icons/map-pin.svg" alt="Address">
+                  </div>
+                  <div>
+                    <strong>Sanctuary Address:</strong><br>
+                    1, Taiwo Adewole Street,<br>
+                    Off Social Club Road, Abule-Egba,<br>
+                    Lagos State, Nigeria.
+                  </div>
+                </div>
+
+                <div style="display:flex; align-items:flex-start; gap:0.75rem;">
+                  <div class="service-icon-box" style="width:38px; height:38px;">
+                    <img src="/assets/icons/phone.svg" alt="Phone">
+                  </div>
+                  <div>
+                    <strong>Helpline & Pastoral Office:</strong><br>
+                    <a href="tel:+2348030701620" style="color:var(--text-main);">+234 803 0701620</a><br>
+                  </div>
+                </div>
+
+                <div style="display:flex; align-items:flex-start; gap:0.75rem;">
+                  <div class="service-icon-box" style="width:38px; height:38px;">
+                    <img src="/assets/icons/mail.svg" alt="Email">
+                  </div>
+                  <div>
+                    <strong>Official Email:</strong><br>
+                    <a href="mailto:office@ggeci.com" style="color:var(--text-main);">office@ggeci.com</a><br>
+                    <a href="mailto:pastor@ggeci.com" style="color:var(--text-main);">pastor@ggeci.com</a>
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-top:1px solid var(--border-color); padding-top:1.25rem; margin-top:1.25rem;">
+                <h4 style="font-size:1rem; color:var(--dark-navy); margin-bottom:0.5rem;">Pastoral Office Consultation
+                  Hours</h4>
+                <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; margin:0;">
+                  <strong>Tuesday & Thursday:</strong> 10:00 AM – 3:00 PM<br>
+                  <strong>Saturday:</strong> By Appointment<br>
+                  <em style="color:var(--accent-orange);">For emergency pastoral appointments, please visit our <a
+                      href="/counselling.html">Counselling page</a>.</em>
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="background:#F8FAFC;">
+              <h4 style="font-size:1.1rem; color:var(--dark-navy); margin-bottom:0.5rem;">Driving & Landmark Directions
+              </h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
+                Located in the heart of Abule-Egba, Lagos. From the Abule-Egba Jubilee Bridge / Bus Stop, navigate into
+                Social Club Road. Turn into <strong>1, Taiwo Adewole Street</strong>. Ample secure parking and church
+                protocol are available to assist you.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Map Placeholder / Directions Container -->
+        <div class="card"
+          style="padding:0; overflow:hidden; border-radius:var(--radius-xl); box-shadow:var(--shadow-md);">
+          <div
+            style="background:var(--dark-navy); color:#FFFFFF; padding:1.25rem 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+            <div>
+              <strong>Greater Grace Embassy Church International — Sanctuary Map</strong>
+              <div style="font-size:0.85rem; color:#94A3B8;">1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba,
+                Lagos</div>
+            </div>
+            <a href="https://maps.google.com/?q=Social+Club+Road+Abule-Egba+Lagos" target="_blank"
+              rel="noopener noreferrer" class="btn btn-sm btn-gold">
+              Open in Google Maps &rarr;
+            </a>
+          </div>
+          <!-- Clean OpenStreetMap embed / responsive iframe for Abule-Egba Lagos -->
+          <div style="height:380px; width:100%; background:#E2E8F0; position:relative;">
+            <iframe width="100%" height="380" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=3.2800%2C6.6300%2C3.3300%2C6.6700&amp;layer=mapnik&amp;marker=6.6480%2C3.3050"
+              style="border: 0;" title="GGECI Church Map">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Church Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/images/logo.png" alt="GGECI Logo">
+          <p>
+            Greater Grace Embassy Church International is an apostolic commission called to proclaim the supernatural
+            grace of God, build faith, and raise global champions for Christ.
+          </p>
+          <div style="font-size:0.85rem; color:#94A3B8;">
+            Sanctuary: 1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba, Lagos, Nigeria.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ministries</h4>
+          <ul class="footer-links">
+            <li><a href="/sermons.html">Sermons Archive</a></li>
+            <li><a href="/events.html">Church Events</a></li>
+            <li><a href="/prayer-request.html">Prayer Requests</a></li>
+            <li><a href="/counselling.html">Pastoral Counselling</a></li>
+            <li><a href="/giving.html">Online Giving</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">Our Vision & Mission</a></li>
+            <li><a href="/about.html#leadership">Senior Pastor</a></li>
+            <li><a href="/about.html#beliefs">What We Believe</a></li>
+            <li><a href="/contact.html">Sanctuary Location</a></li>
+            <li><a href="/newsletter.html">Weekly Bulletin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Weekly Gatherings</h4>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Sundays:</strong> 10:00 AM<br>
+              Grace Celebration Service
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Wednesdays:</strong> 6:00 PM<br>
+              Bible Study
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Thursday:</strong> 10:00 AM<br>
+              Midweek Deliverance Service
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Greater Grace Embassy Church International (GGECI). All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="/about.html">Beliefs</a>
+          <a href="/prayer-request.html">Prayer</a>
+          <a href="/giving.html">Giving</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/contact.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Support the gospel and building of God's Kingdom through online giving, tithes, offerings, and church projects at Greater Grace Embassy Church International (GGECI).">
+  <title>Online Giving & Tithes | Greater Grace Embassy Church International</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="navbar" id="site-header">
+    <div class="container nav-container">
+      <a href="/index.html" class="brand-logo" aria-label="GGECI Home">
+        <img src="/assets/images/logo.png" alt="Greater Grace Embassy Church International Logo">
+        <div class="brand-title">
+          <span class="brand-name">GREATER GRACE</span>
+          <span class="brand-sub">EMBASSY CHURCH INT'L</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/sermons.html" class="nav-link">Sermons</a></li>
+          <li><a href="/events.html" class="nav-link">Events</a></li>
+          <li><a href="/prayer-request.html" class="nav-link">Prayer Request</a></li>
+          <li><a href="/counselling.html" class="nav-link">Counselling</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="/giving.html" class="btn btn-accent btn-sm">Give Online</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-header" aria-label="Giving Header Banner">
+      <div class="container">
+        <h1 class="page-header-title">Online Giving & Partnerships</h1>
+        <p class="page-header-subtitle">
+          "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for
+          God loves a cheerful giver." — 2 Corinthians 9:7
+        </p>
+        <div class="breadcrumb">
+          <a href="/index.html">Home</a>
+          <span>/</span>
+          <span>Giving</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giving Options Section -->
+    <section class="section" aria-label="Giving Methods">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Kingdom Investment</span>
+          <h2 class="section-title">Support God's Work at GGECI</h2>
+          <p class="section-subtitle">
+            Your generous tithes, offerings, building pledges, and sacrificial giving fuel kingdom expansion, sanctuary
+            projects, and community welfare programs.
+          </p>
+        </div>
+
+        <!-- Giving Channels Grid -->
+        <div class="grid-2" style="align-items:flex-start; margin-bottom:4rem;">
+          <!-- Left: Online Card Payment & Notification -->
+          <div class="form-card">
+            <span class="badge badge-orange" style="margin-bottom:0.75rem;">Fast & Secure</span>
+            <h3 style="font-size:1.45rem; color:var(--dark-navy); margin-bottom:1rem;">Online Card / Bank Transfer</h3>
+
+            <div id="online-payment-notice" style="margin-bottom:1.5rem;"></div>
+
+            <div class="form-group">
+              <label class="form-label" for="giving-purpose">Select Purpose of Giving</label>
+              <select id="giving-purpose" class="form-select">
+                <option value="Tithe">Tithe (Malachi 3:10)</option>
+                <option value="Sunday Offering">Sunday Celebration Offering</option>
+                <option value="Building Fund">Sanctuary Expansion & Building Project</option>
+                <option value="Midweek Sacrifice">Wednesday Deliverance Offering</option>
+                <option value="Welfare & Community">Welfare, Widows & Community Outreach</option>
+                <option value="Prophetic Seed">Prophetic Seed of Faith</option>
+              </select>
+            </div>
+
+            <!-- Preset Amount Buttons -->
+            <div class="form-group">
+              <label class="form-label">Select Amount (NGN &#8358;)</label>
+              <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.5rem; margin-bottom:0.75rem;">
+                <button type="button" class="btn btn-outline btn-sm amount-preset"
+                  data-value="2000">&#8358;2,000</button>
+                <button type="button" class="btn btn-outline btn-sm amount-preset"
+                  data-value="5000">&#8358;5,000</button>
+                <button type="button" class="btn btn-outline btn-sm amount-preset"
+                  data-value="10000">&#8358;10,000</button>
+                <button type="button" class="btn btn-outline btn-sm amount-preset"
+                  data-value="25000">&#8358;25,000</button>
+                <button type="button" class="btn btn-outline btn-sm amount-preset"
+                  data-value="50000">&#8358;50,000</button>
+                <button type="button" class="btn btn-outline btn-sm amount-preset"
+                  data-value="100000">&#8358;100,000</button>
+              </div>
+              <input type="number" id="giving-amount" class="form-control"
+                placeholder="Or enter custom amount in Naira (&#8358;)" min="100">
+            </div>
+
+            <div style="margin-bottom:1.75rem;">
+              <button type="button" class="btn btn-primary btn-block btn-lg" onclick="payWithPaystack()">
+                Pay Securely with Debit Card / Online
+              </button>
+            </div>
+
+            <!-- Direct Transfer Confirmation Form -->
+            <div style="border-top:1px solid var(--border-color); padding-top:1.5rem; margin-top:1.5rem;">
+              <h4 style="font-size:1.05rem; color:var(--dark-navy); margin-bottom:0.5rem;">Already made a direct bank
+                transfer?</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">
+                Notify the church audit and treasury office by submitting your transfer reference below:
+              </p>
+
+              <div id="notify-alert-success" class="form-alert form-alert-success"></div>
+              <div id="notify-alert-error" class="form-alert form-alert-error"></div>
+
+              <form id="transfer-notify-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="notify-name">Giver's Name</label>
+                    <input type="text" id="notify-name" class="form-control" placeholder="Full name / Anonymous">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="notify-email">Email Address</label>
+                    <input type="email" id="notify-email" class="form-control" placeholder="giver@example.com">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="notify-bank">Bank Paid To</label>
+                    <select id="notify-bank" class="form-select">
+                      <option value="Zenith Bank">Zenith Bank PLC</option>
+                      <option value="Other">Other Bank / Transfer</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="notify-ref">Transfer Reference / Session ID</label>
+                    <input type="text" id="notify-ref" class="form-control" placeholder="e.g. 090123984128">
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-outline btn-block btn-sm" id="notify-submit-btn">
+                  Submit Transfer Confirmation
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Right: Official Church Bank Accounts -->
+          <div id="bank-accounts-section">
+            <span class="badge badge-gold" style="margin-bottom:0.75rem;">Official Bank Details</span>
+            <h3 style="font-size:1.45rem; color:var(--dark-navy); margin-bottom:1rem;">Direct Nigerian Bank Transfers
+            </h3>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;">
+              You can transfer directly from your banking app, USSD code, or OTC at any commercial bank branch across
+              Nigeria.
+            </p>
+
+            <div style="display:flex; flex-direction:column; gap:1.25rem;">
+              <!-- Zenith Bank -->
+              <div class="bank-card">
+                <div class="bank-card-header">
+                  <div>
+                    <div class="bank-name">Zenith Bank PLC</div>
+                    <div class="bank-acc-name">Greater Grace Embassy Church Int'l</div>
+                  </div>
+                  <button class="btn btn-outline btn-sm btn-copy-account" data-account="1012345678"
+                    data-bank="Zenith Bank">
+                    <img src="/assets/icons/copy.svg" alt="Copy" style="width:14px; height:14px;"> Copy Account
+                  </button>
+                </div>
+                <div class="bank-acc-number">1013834349</div>
+                <div class="bank-purpose-tag">&#10003; Official Church Account for: Tithes, Offerings, Building Projects
+                  &amp; Kingdom Seeds
+                </div>
+              </div>
+            </div>
+
+            <!-- International Giving Notice -->
+            <div class="card" style="background:#F1F5F9; border-color:#CBD5E1; margin-top:1.5rem; padding:1.25rem;">
+              <h4 style="font-size:0.95rem; color:var(--dark-navy); margin-bottom:0.35rem;">Giving from Abroad (USD,
+                GBP, EUR)</h4>
+              <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">
+                For international wire transfers, domiciliary accounts, or diaspora partnerships, kindly contact our
+                church treasury office at <code>giving@ggeci.com</code> or call <code>+234 803 0701620</code>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biblical Promise Accordion / Highlights -->
+        <div class="card" style="background:#000000; color:#FFFFFF; text-align:center; padding:3rem 2rem;">
+          <h3 style="color:#FFFFFF; font-size:1.8rem; margin-bottom:1rem;">Your Giving is a Covenant Seed</h3>
+          <p style="color:#E2E8F0; font-size:1.05rem; max-width:700px; margin:0 auto 1.5rem; line-height:1.7;">
+            "Give, and it will be given to you. A good measure, pressed down, shaken together and running over, will be
+            poured into your lap. For with the measure you use, it will be measured to you." — Luke 6:38
+          </p>
+          <div style="font-size:0.9rem; color:var(--divine-gold); font-weight:600;">
+            May the Lord bless and multiply every seed sown into Greater Grace Embassy Church International.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Church Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/images/logo.png" alt="GGECI Logo">
+          <p>
+            Greater Grace Embassy Church International is an apostolic commission called to proclaim the supernatural
+            grace of God, build faith, and raise global champions for Christ.
+          </p>
+          <div style="font-size:0.85rem; color:#94A3B8;">
+            Sanctuary: 1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba, Lagos, Nigeria.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ministries</h4>
+          <ul class="footer-links">
+            <li><a href="/sermons.html">Sermons Archive</a></li>
+            <li><a href="/events.html">Church Events</a></li>
+            <li><a href="/prayer-request.html">Prayer Requests</a></li>
+            <li><a href="/counselling.html">Pastoral Counselling</a></li>
+            <li><a href="/giving.html">Online Giving</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">Our Vision & Mission</a></li>
+            <li><a href="/about.html#leadership">Senior Pastor</a></li>
+            <li><a href="/about.html#beliefs">What We Believe</a></li>
+            <li><a href="/contact.html">Sanctuary Location</a></li>
+            <li><a href="/newsletter.html">Weekly Bulletin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Weekly Gatherings</h4>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Sundays:</strong> 10:00 AM<br>
+              Grace Celebration Service
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Wednesdays:</strong> 6:00 PM<br>
+              Bible Study
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Thursday:</strong> 10:00 AM<br>
+              Midweek Deliverance Service
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Greater Grace Embassy Church International (GGECI). All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="/about.html">Beliefs</a>
+          <a href="/prayer-request.html">Prayer</a>
+          <a href="/giving.html">Giving</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/giving.js"></script>
+</body>
+
+</html>

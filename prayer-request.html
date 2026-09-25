@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Submit your confidential prayer requests to the pastoral intercession team at Greater Grace Embassy Church International (GGECI). We stand with you in faith.">
+  <title>Prayer Requests | Greater Grace Embassy Church International</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="navbar" id="site-header">
+    <div class="container nav-container">
+      <a href="/index.html" class="brand-logo" aria-label="GGECI Home">
+        <img src="/assets/images/logo.png" alt="Greater Grace Embassy Church International Logo">
+        <div class="brand-title">
+          <span class="brand-name">GREATER GRACE</span>
+          <span class="brand-sub">EMBASSY CHURCH INT'L</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/sermons.html" class="nav-link">Sermons</a></li>
+          <li><a href="/events.html" class="nav-link">Events</a></li>
+          <li><a href="/prayer-request.html" class="nav-link">Prayer Request</a></li>
+          <li><a href="/counselling.html" class="nav-link">Counselling</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="/giving.html" class="btn btn-accent btn-sm">Give Online</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-header" aria-label="Prayer Request Banner">
+      <div class="container">
+        <h1 class="page-header-title">Send Your Prayer Request</h1>
+        <p class="page-header-subtitle">
+          "Again I say unto you, That if two of you shall agree on earth as touching any thing that they shall ask, it
+          shall be done for them." — Matthew 18:19
+        </p>
+        <div class="breadcrumb">
+          <a href="/index.html">Home</a>
+          <span>/</span>
+          <span>Prayer Request</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prayer Request Submission Form -->
+    <section class="section" aria-label="Prayer Submission Section">
+      <div class="container">
+        <div class="grid-2" style="align-items:flex-start;">
+          <!-- Left Column: Form Card -->
+          <div class="form-card">
+            <span class="section-tag">We Stand in Agreement</span>
+            <h2 style="font-size:1.85rem; margin-bottom:1rem; color:var(--dark-navy);">Submit Your Petition</h2>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;">
+              No situation is hopeless in the presence of God. Our Senior Pastor and the pastoral intercessory board
+              lift every submitted prayer request to God during our services and vigils.
+            </p>
+
+            <!-- Status Alerts -->
+            <div id="prayer-alert-loading" class="form-alert form-alert-loading">
+              <span class="spinner spinner-primary"></span>
+              <span>Submitting your prayer request securely to our intercessory team...</span>
+            </div>
+            <div id="prayer-alert-success" class="form-alert form-alert-success"></div>
+            <div id="prayer-alert-error" class="form-alert form-alert-error"></div>
+
+            <form id="prayer-form" novalidate>
+              <!-- Honeypot field for bot protection (hidden from humans) -->
+              <div style="display:none;" aria-hidden="true">
+                <input type="text" id="prayer-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prayer-name">Your Full Name <span class="required">*</span></label>
+                <input type="text" id="prayer-name" class="form-control" placeholder="e.g. Sister Grace Samuel"
+                  required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="prayer-email">Email Address (Optional)</label>
+                  <input type="email" id="prayer-email" class="form-control" placeholder="grace@example.com">
+                  <span class="form-hint">Provide if you would like prayer feedback.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="prayer-phone">Phone Number (Optional)</label>
+                  <input type="tel" id="prayer-phone" class="form-control" placeholder="+234 803 123 4567">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prayer-category">Prayer Category</label>
+                <select id="prayer-category" class="form-select">
+                  <option value="Healing & Health">Healing & Divine Health</option>
+                  <option value="Financial Breakthrough">Financial Breakthrough & Business Openings</option>
+                  <option value="Family & Marriage">Marriage & Family Restoration</option>
+                  <option value="Fruit of the Womb">Fruit of the Womb & Safe Delivery</option>
+                  <option value="Spiritual Deliverance">Spiritual Deliverance & Freedom</option>
+                  <option value="Career & Job">Career, Exams & Job Acceleration</option>
+                  <option value="Thanksgiving & Testimony">Thanksgiving & Praise Report</option>
+                  <option value="General Prayer">General Petitions</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prayer-request">Your Prayer Request <span
+                    class="required">*</span></label>
+                <textarea id="prayer-request" class="form-textarea" rows="5"
+                  placeholder="Share the details of what you desire God to do in your life, family or situation..."
+                  required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-check" for="prayer-confidential">
+                  <input type="checkbox" id="prayer-confidential" checked>
+                  <span class="form-check-label">
+                    <strong>Strictly Confidential:</strong> Keep this petition restricted to the Senior Pastor and
+                    direct pastoral prayer team.
+                  </span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg" id="prayer-submit-btn">
+                <img src="/assets/icons/heart.svg" alt="Pray"
+                  style="width:16px; height:16px; filter:brightness(0) invert(1);">
+                Submit Prayer Request
+              </button>
+            </form>
+          </div>
+
+          <!-- Right Column: Encouragement & Scriptural Promises -->
+          <div>
+            <div class="card" style="background:#FFFFFF; margin-bottom:2rem;">
+              <span class="badge badge-gold" style="margin-bottom:0.75rem;">Biblical Assurance</span>
+              <h3 style="font-size:1.35rem; margin-bottom:1rem; color:var(--dark-navy);">The Power of Agreement</h3>
+              <p style="color:var(--text-muted); line-height:1.7; font-size:0.95rem;">
+                When you share your prayer burden with us, you are not praying alone. The Bible declares that one will
+                chase a thousand, and two will put ten thousand to flight (Deuteronomy 32:30).
+              </p>
+              <div
+                style="background:var(--primary-light); padding:1.25rem; border-radius:var(--radius-md); border-left:4px solid var(--primary); margin:1.25rem 0;">
+                <p
+                  style="font-family:var(--font-sacred); color:var(--primary-dark); font-size:1.05rem; margin:0; line-height:1.6;">
+                  "The earnest prayer of a righteous person has great power and produces wonderful results."<br>
+                  <strong>— James 5:16 (NLT)</strong>
+                </p>
+              </div>
+            </div>
+
+            <div class="card" style="background:var(--dark-navy); color:#FFFFFF;">
+              <h3 style="color:#FFFFFF; font-size:1.3rem; margin-bottom:0.75rem;">Join Our Live Prayer Vigils</h3>
+              <p style="color:#CBD5E1; font-size:0.92rem; line-height:1.6; margin-bottom:1.25rem;">
+                Experience the atmosphere of holy deliverance and answers on our monthly
+                Wonders Vigil (First Friday of every month, 10:00 PM).
+              </p>
+              <div style="font-size:0.85rem; color:var(--divine-gold); font-weight:600;">
+                Sanctuary: 1, Taiwo Adewole Street, Abule-Egba, Lagos
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Church Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/images/logo.png" alt="GGECI Logo">
+          <p>
+            Greater Grace Embassy Church International is an apostolic commission called to proclaim the supernatural
+            grace of God, build faith, and raise global champions for Christ.
+          </p>
+          <div style="font-size:0.85rem; color:#94A3B8;">
+            Sanctuary: 1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba, Lagos, Nigeria.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ministries</h4>
+          <ul class="footer-links">
+            <li><a href="/sermons.html">Sermons Archive</a></li>
+            <li><a href="/events.html">Church Events</a></li>
+            <li><a href="/prayer-request.html">Prayer Requests</a></li>
+            <li><a href="/counselling.html">Pastoral Counselling</a></li>
+            <li><a href="/giving.html">Online Giving</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">Our Vision & Mission</a></li>
+            <li><a href="/about.html#leadership">Senior Pastor</a></li>
+            <li><a href="/about.html#beliefs">What We Believe</a></li>
+            <li><a href="/contact.html">Sanctuary Location</a></li>
+            <li><a href="/newsletter.html">Weekly Bulletin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Weekly Gatherings</h4>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Sundays:</strong> 10:00 AM<br>
+              Grace Celebration Service
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Wednesdays:</strong> 6:00 PM<br>
+              Bible Study
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Thursday:</strong> 10:00 AM<br>
+              Midweek Deliverance Service
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Greater Grace Embassy Church International (GGECI). All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="/about.html">Beliefs</a>
+          <a href="/prayer-request.html">Prayer</a>
+          <a href="/giving.html">Giving</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/prayer.js"></script>
+</body>
+
+</html>

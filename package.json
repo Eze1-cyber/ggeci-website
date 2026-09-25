@@ -1,0 +1,23 @@
+{
+  "name": "ggeci-church-website",
+  "version": "1.0.0",
+  "description": "Greater Grace Embassy Church International (GGECI) Official Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "church",
+    "ggeci",
+    "vanilla-html",
+    "css",
+    "javascript"
+  ],
+  "author": "Greater Grace Embassy Church International",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

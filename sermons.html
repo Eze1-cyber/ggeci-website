@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Listen to and watch spirit-filled sermons and Bible teachings by the Senior Pastor and guest ministers at Greater Grace Embassy Church International (GGECI).">
+  <title>Sermons & Teachings | Greater Grace Embassy Church International</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="navbar" id="site-header">
+    <div class="container nav-container">
+      <a href="/index.html" class="brand-logo" aria-label="GGECI Home">
+        <img src="/assets/images/logo.png" alt="Greater Grace Embassy Church International Logo">
+        <div class="brand-title">
+          <span class="brand-name">GREATER GRACE</span>
+          <span class="brand-sub">EMBASSY CHURCH INT'L</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/sermons.html" class="nav-link">Sermons</a></li>
+          <li><a href="/events.html" class="nav-link">Events</a></li>
+          <li><a href="/prayer-request.html" class="nav-link">Prayer Request</a></li>
+          <li><a href="/counselling.html" class="nav-link">Counselling</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="/giving.html" class="btn btn-accent btn-sm">Give Online</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-header" aria-label="Sermons Page Header">
+      <div class="container">
+        <h1 class="page-header-title">Sermons & Bible Teachings</h1>
+        <p class="page-header-subtitle">
+          Build your spiritual life and deepen your walk with God through anointed, scripture-grounded messages of grace
+          and deliverance.
+        </p>
+        <div class="breadcrumb">
+          <a href="/index.html">Home</a>
+          <span>/</span>
+          <span>Sermons</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sermon Controls: Search & Category Filters -->
+    <section class="section" style="padding:3.5rem 0;" aria-label="Sermons Archive">
+      <div class="container">
+        <div
+          style="background:#FFFFFF; border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:1.5rem; margin-bottom:2.5rem; box-shadow:var(--shadow-sm); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.25rem;">
+          <!-- Category Filter Buttons -->
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap;" role="group" aria-label="Sermon Categories">
+            <button class="btn btn-sm btn-outline filter-btn active" data-category="all">All Messages</button>
+            <button class="btn btn-sm btn-outline filter-btn" data-category="grace">Grace & Faith</button>
+            <button class="btn btn-sm btn-outline filter-btn" data-category="deliverance">Deliverance</button>
+            <button class="btn btn-sm btn-outline filter-btn" data-category="prayer">Prayer</button>
+            <button class="btn btn-sm btn-outline filter-btn" data-category="prophetic">Prophetic</button>
+          </div>
+
+          <!-- Search Input -->
+          <div style="min-width:280px; flex:1; max-width:400px;">
+            <input type="text" id="sermon-search" class="form-control"
+              placeholder="Search by title, scripture or speaker..." aria-label="Search Sermons">
+          </div>
+        </div>
+
+        <!-- Sermon Notes Section -->
+        <p class="sermon-notice"
+          style="text-align:center; margin:2rem 0; font-weight:600; color:var(--on-surface-variant);">
+          Only sermon notes are currently available. Video sermons will be coming shortly.
+        </p>
+        <div class="grid-3" id="sermons-grid">
+          <article class="card card-media" data-id="sermon-5">
+            <div class="card-image-wrap">
+              <img src="/assets/images/sermon-banner.jpg" alt="THERE IS AN END" loading="lazy">
+              <div class="card-badge-overlay">
+                <span class="badge badge-orange">Faith & Hope</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-meta-item">
+                  <img src="/assets/icons/calendar.svg" alt="Date"> Sep 21, 2026
+                </span>
+                <span class="card-meta-item">
+                  <img src="/assets/icons/bible.svg" alt="Scripture"> Proverbs 23:18
+                </span>
+              </div>
+              <h3 class="card-title" style="color:var(--on-surface);">THERE IS AN END</h3>
+              <p style="font-size:0.88rem; font-weight:600; color:var(--on-surface-variant); margin-bottom:0.75rem;">
+                Speaker: Pastor J. K. Eze
+              </p>
+              <p class="card-desc" style="color:var(--on-surface-variant);">
+                Ministering: Pastor J. K. Eze. Text: Proverbs 23:18 (KJV) — “For surely there is an end; and thine
+                expectation shall not be cut off.”...
+              </p>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-sm btn-play-sermon" onclick="openSermonModal('sermon-5')">
+                  Read Message Note
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card card-media" data-id="sermon-6">
+            <div class="card-image-wrap">
+              <img src="/assets/images/fellowship.jpg" alt="DWELLING IN THE ARK" loading="lazy">
+              <div class="card-badge-overlay">
+                <span class="badge badge-orange">Faith & Hope</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-meta-item">
+                  <img src="/assets/icons/calendar.svg" alt="Date"> Sep 6, 2026
+                </span>
+                <span class="card-meta-item">
+                  <img src="/assets/icons/bible.svg" alt="Scripture"> Genesis 6–8
+                </span>
+              </div>
+              <h3 class="card-title" style="color:var(--on-surface);">DWELLING IN THE ARK</h3>
+              <p style="font-size:0.88rem; font-weight:600; color:var(--on-surface-variant); margin-bottom:0.75rem;">
+                Speaker: Pastor J. K. Eze
+              </p>
+              <p class="card-desc" style="color:var(--on-surface-variant);">
+                Ministering: Pastor J. K. Eze. Text: Genesis 6–8 (Genesis 7:1) — “Come thou and all thy house into the
+                ark…”...
+              </p>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-sm btn-play-sermon" onclick="openSermonModal('sermon-6')">
+                  Read Message Note
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Sermon Media Modal -->
+  <div class="modal-overlay" id="sermon-modal" role="dialog" aria-modal="true" aria-labelledby="modal-sermon-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modal-sermon-title">Sermon Title</h3>
+        <button class="modal-close" id="modal-close-btn" aria-label="Close Sermon Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="modal-sermon-media"></div>
+        <p id="modal-sermon-speaker" style="font-weight:700; color:var(--on-surface); margin-bottom:0.25rem;"></p>
+        <p id="modal-sermon-scripture"
+          style="font-weight:600; color:var(--on-surface-variant); font-size:0.9rem; margin-bottom:1rem;"></p>
+        <div style="border-top:1px solid var(--outline-variant); padding-top:1rem;">
+          <h4 style="font-size:1.05rem; margin-bottom:0.75rem; color:var(--on-surface);">Full Sermon Message Notes
+          </h4>
+          <div id="modal-sermon-desc" style="color:var(--on-surface-variant); font-size:0.98rem; line-height:1.75;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Church Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/images/logo.png" alt="GGECI Logo">
+          <p>
+            Greater Grace Embassy Church International is an apostolic commission called to proclaim the supernatural
+            grace of God, build faith, and raise global champions for Christ.
+          </p>
+          <div style="font-size:0.85rem; color:#94A3B8;">
+            Sanctuary: 1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba, Lagos, Nigeria.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ministries</h4>
+          <ul class="footer-links">
+            <li><a href="/sermons.html">Sermons Archive</a></li>
+            <li><a href="/events.html">Church Events</a></li>
+            <li><a href="/prayer-request.html">Prayer Requests</a></li>
+            <li><a href="/counselling.html">Pastoral Counselling</a></li>
+            <li><a href="/giving.html">Online Giving</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">Our Vision & Mission</a></li>
+            <li><a href="/about.html#leadership">Senior Pastor</a></li>
+            <li><a href="/about.html#beliefs">What We Believe</a></li>
+            <li><a href="/contact.html">Sanctuary Location</a></li>
+            <li><a href="/newsletter.html">Weekly Bulletin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Weekly Gatherings</h4>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Sundays:</strong> 10:00 AM<br>
+              Grace Celebration Service
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Wednesdays:</strong> 6:00 PM<br>
+              Bible Study
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Thursday:</strong> 10:00 AM<br>
+              Midweek Deliverance Service
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Greater Grace Embassy Church International (GGECI). All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="/about.html">Beliefs</a>
+          <a href="/prayer-request.html">Prayer</a>
+          <a href="/giving.html">Giving</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/sermons.js"></script>
+</body>
+
+</html>

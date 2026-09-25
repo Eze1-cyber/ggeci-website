@@ -1,0 +1,439 @@
+// api/db.js
+// Unified, resilient data and authentication persistence layer for GGECI
+// Works seamlessly in local development and Vercel serverless functions
+
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+
+// Resolve database file path
+const DATA_DIR = process.env.VERCEL ? '/tmp/data' : path.join(process.cwd(), 'data');
+const DB_FILE = path.join(DATA_DIR, 'db.json');
+
+// Session secret
+const SESSION_SECRET = process.env.ADMIN_SESSION_SECRET || 'ggeci_embassy_of_grace_secure_session_token_key_2026';
+
+function hashPassword(password) {
+  return crypto.createHash('sha256').update(password + SESSION_SECRET).digest('hex');
+}
+
+// Initial seed data with authentic church content
+const INITIAL_DATA = {
+  sermons: [
+    {
+      id: "sermon-1",
+      title: "Walking in Supernatural Grace and Favor",
+      speaker: "Senior Pastor",
+      date: "2026-09-20",
+      scripture: "Ephesians 2:8-9, 2 Corinthians 12:9",
+      description: "Discover the transformative power of God's unmerited favor. Grace is not just a theological concept—it is the divine empowerment that enables you to triumph in every season.",
+      audioUrl: "https://actions.google.com/sounds/v1/ambiences/outdoor_evening_crickets.ogg",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      category: "Grace & Faith",
+      thumbnail: "/assets/images/sermon-banner.jpg",
+      status: "published",
+      createdAt: "2026-09-20T10:00:00Z"
+    },
+    {
+      id: "sermon-2",
+      title: "The Anointing that Breaks Every Heavy Yoke",
+      speaker: "Senior Pastor",
+      date: "2026-09-13",
+      scripture: "Isaiah 10:27, Luke 4:18",
+      description: "An anointed expository message on breaking ancestral limitations, overcoming stagnation, and experiencing spiritual liberty through the power of the Holy Spirit.",
+      audioUrl: "",
+      videoUrl: "",
+      category: "Deliverance",
+      thumbnail: "/assets/images/hero-bg.jpg",
+      status: "published",
+      createdAt: "2026-09-13T10:00:00Z"
+    },
+    {
+      id: "sermon-3",
+      title: "Divine Acceleration and Open Doors",
+      speaker: "Guest Minister",
+      date: "2026-09-06",
+      scripture: "Amos 9:13, Revelation 3:8",
+      description: "Prophetic teachings on how God steps into human affairs to redeem lost time and open doors that no man can shut.",
+      audioUrl: "",
+      videoUrl: "",
+      category: "Prophetic",
+      thumbnail: "/assets/images/fellowship.jpg",
+      status: "published",
+      createdAt: "2026-09-06T10:00:00Z"
+    },
+    {
+      id: "sermon-4",
+      title: "Building an Unshakable Altar of Prayer",
+      speaker: "Senior Pastor",
+      date: "2026-08-30",
+      scripture: "1 Thessalonians 5:17, James 5:16",
+      description: "Practical revelations on deepening your personal fellowship with God and releasing prevailing prayers that shake heaven and transform lives.",
+      audioUrl: "",
+      videoUrl: "",
+      category: "Prayer & Intercession",
+      thumbnail: "/assets/images/sermon-banner.jpg",
+      status: "published",
+      createdAt: "2026-08-30T10:00:00Z"
+    },
+    {
+      id: "sermon-5",
+      title: "THERE IS AN END",
+      speaker: "Pastor J. K. Eze",
+      date: "2026-09-21",
+      description: "Ministering: Pastor J. K. Eze\nText: Proverbs 23:18 (KJV)\n\n“For surely there is an end; and thine expectation shall not be cut off.”\n\nHallelujah!\n\nThere is an end to poverty.\nThere is an end to barrenness.\nThere is an end to joblessness.\nThere is an end to stagnation.\nThere is an end to family affliction.\nThere is an end to every activity of the wicked against your life.\n\nNo matter how long it has continued, there must be an end!\n\nSomebody shout, THERE IS AN END!\n\nAnd you must understand the power of spiritual relationships. The Bible says in 2 Chronicles 20:20, “Believe in the LORD your God, so shall ye be established; believe his prophets, so shall ye prosper.”\n\nDon’t joke with the ministers God has placed in your life. Don’t despise your pastor or visiting ministers. You don’t know what God has deposited in them for your life.\n\nSometimes when your pastor corrects you, it is not because he hates you. He expects you to do better.\n\nAnd I declare over somebody today: you will stand on your feet again!\n\nEvery prolonged situation is coming to an end.\n\nYour expectation shall not be cut off!\n\nTHERE IS AN END!\n\nAnd as God is doing something in your life, make sure you are not the person stopping what God wants to do in somebody else’s life.\n\nThere is an end! There is an end! There is an end!\n\nThere is an end to every negative season.\nOne of the ways we bring an end to poverty is by demonstrate our faith in God through giving.\n\nThe Bible says in Luke 6:38:\n\n“Give, and it shall be given unto you; good measure, pressed down, and shaken together, and running over…”\n\nYour giving is an expression of your trust in God.\n\nWhen you give, don’t give because somebody is manipulating you. Give with faith, obedience, and a willing heart.\n\nThere is an end to lack.\nThere is an end to stagnation.\nThere is an end to financial limitation.\nAnd as you give today, believe God that your expectation will not be cut off.\n\n2 Corinthians 9:7 says:\n\n“God loveth a cheerful giver.”\n\nSo don’t give grudgingly. Give with expectation, give with thanksgiving, and give as an act of worship.",
+      audioUrl: "",
+      videoUrl: "",
+      category: "Faith & Hope",
+      thumbnail: "/assets/images/sermon-banner.jpg",
+      status: "published",
+      createdAt: "2026-09-21T10:00:00Z"
+    },
+    {
+      id: "sermon-6",
+      title: "DWELLING IN THE ARK",
+      speaker: "Pastor J. K. Eze",
+      date: "2026-09-06",
+      scripture: "Genesis 6–8",
+      description: "Ministering: Pastor J. K. Eze\nText: Genesis 6–8 (Genesis 7:1)\n\n“Come thou and all thy house into the ark…”\n\nThere is something powerful about remaining in the Ark.\n\nNigeria may be hard. Families may be under pressure. Businesses may be struggling.\n\nBut when you are in the Ark, you are safe from the rain…\n\nDON’T LOOK AT THE FLOOD; LOOK AT THE ONE WHO PRESERVED YOU!\nLOOK AT THE ARK and know you are safe, the ark is JESUS CHRIST!\n\nMY SAFETY IS IN CHRIST!\n\nDon’t give up on your family, when God calls you into the ark, bring all your family with you.\n\nYour obedience can become a seed in your household.\n\nJoshua 24:15 — “As for me and my house, we will serve the LORD.”\n\nDon’t look outside because somebody has a car, house, marriage, business, or has travelled, especially as December comes, then you abandon the ark in search for something that seems better but is not, just as the crow was sent out and never returned, once you step out, you’ll be so engulfed and might never return.\n\nDON’T LEAVE THE ARK TO IMPRESS PEOPLE!\n\nPeter looked at Jesus and walked on water, but when he looked at the wind, he began to sink.\n\nMatthew 14:30 — “But when he saw the wind boisterous, he was afraid…”\n\nWHAT YOU KEEP LOOKING AT WILL DETERMINE WHAT CONTROLS YOU.\n\nAre you looking inside the ark or looking outside?\n\nGenesis 8:1 — “And God remembered Noah…”\n\nGod had not forgotten him.\n\nTHE FLOOD HAS AN EXPIRY DATE!\n\nSo stay in prayer.\nStay in faith.\nStay in Christ.\n\nDWELL IN THE ARK!\nREMAIN IN CHRIST!\n\nSay this: ME AND MY HOUSE WILL SERVE THE LORD!\n\nIn Jesus’ name.\nGOD BLESS YOU",
+      audioUrl: "",
+      videoUrl: "",
+      category: "Faith & Hope",
+      thumbnail: "/assets/images/fellowship.jpg",
+      status: "published",
+      createdAt: "2026-09-06T10:00:00Z"
+    }
+  ],
+  events: [
+    {
+      id: "event-5",
+      title: "Children and Teenagers Thanksgiving",
+      date: "September 27th, 2026",
+      time: "10:00 AM",
+      location: "GGECI Sanctuary: 1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba, Lagos",
+      description: "A special celebration and thanksgiving service dedicated to our children and teenagers, thanking God for their growth, wisdom, academic excellence, and divine protection.",
+      speaker: "Children & Youth Department Ministers / Senior Pastor",
+      category: "Thanksgiving",
+      image: "/assets/images/fellowship.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-20T08:00:00Z"
+    },
+    {
+      id: "event-6",
+      title: "Church Thanksgiving",
+      date: "October 25th, 2026",
+      time: "10:00 AM",
+      location: "GGECI Sanctuary, Abule-Egba, Lagos",
+      description: "Annual whole-church thanksgiving service celebrating God’s faithfulness, supernatural grace, open doors, and miraculous breakthroughs in the lives of all members and families.",
+      speaker: "Pastor Justina Eze & Pastoral Team",
+      category: "Thanksgiving",
+      image: "/assets/images/hero-bg.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-20T08:00:00Z"
+    },
+    {
+      id: "event-7",
+      title: "Pastors Birthday Celebration",
+      date: "December 13th, 2026",
+      time: "10:00 AM",
+      location: "GGECI Sanctuary, Abule-Egba, Lagos",
+      description: "A joyful celebration honoring God for the life, leadership, and visionary ministry of our beloved Senior Pastor. Come celebrate and partake in the prophetic blessing.",
+      speaker: "Church Leadership & Guest Ministers",
+      category: "Celebration",
+      image: "/assets/images/pst-jk-eze.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-20T08:00:00Z"
+    },
+    {
+      id: "event-8",
+      title: "Christmas Carol Night",
+      date: "December 24th, 2026",
+      time: "6:00 PM",
+      location: "GGECI Sanctuary, Abule-Egba, Lagos",
+      description: "An evening of festive carols, candlelight adoration, special choir performances, and joyful celebration of the birth of our Savior, Jesus Christ.",
+      speaker: "GGECI Choir & Pastoral Team",
+      category: "Christmas",
+      image: "/assets/images/sermon-banner.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-20T08:00:00Z"
+    },
+    {
+      id: "event-9",
+      title: "Christmas Service",
+      date: "December 25th, 2026",
+      time: "9:00 AM",
+      location: "GGECI Sanctuary, Abule-Egba, Lagos",
+      description: "Celebrate the glorious birth of Jesus Christ with joyous praise, thanksgiving, communion, and celebration of the unconditional gift of salvation.",
+      speaker: "Pastor Justina Eze",
+      category: "Christmas",
+      image: "/assets/images/fellowship.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-20T08:00:00Z"
+    },
+    {
+      id: "event-10",
+      title: "Cross Over Service",
+      date: "December 31st, 2026",
+      time: "9:00 PM",
+      location: "GGECI Sanctuary, Abule-Egba, Lagos",
+      description: "Transition victoriously into the New Year with prevailing prayer, prophetic declarations, uninhibited praise, and receiving God's theme and direction for 2027.",
+      speaker: "Pastor Justina Eze & Pastoral Team",
+      category: "Crossover / Vigil",
+      image: "/assets/images/hero-bg.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-20T08:00:00Z"
+    },
+    {
+      id: "event-3",
+      title: "Greater Grace Annual Believers Convention",
+      date: "November 12 - 15, 2026",
+      time: "5:30 PM Daily & 9:00 AM Sunday",
+      location: "Main Auditorium, GGECI Abule-Egba",
+      description: "Our flagship annual holy convocation featuring seasoned ministers of the gospel from across Nigeria and abroad. 4 days of apostolic grace, miracles, and impartation.",
+      speaker: "Host Pastor & Guest Apostolic Speakers",
+      category: "Convention",
+      image: "/assets/images/sermon-banner.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-10T12:00:00Z"
+    },
+    {
+      id: "event-4",
+      title: "Night of Unstoppable Praise & Wonders",
+      date: "Last Friday of Every Month",
+      time: "10:00 PM - 4:30 AM (Vigil)",
+      location: "GGECI Sanctuary, Abule-Egba, Lagos",
+      description: "All-night praise, prophetic decrees, intercession, and breakthrough miracles under the atmosphere of holy adoration.",
+      speaker: "GGECI Choir & Ministers",
+      category: "Vigil / Praise",
+      image: "/assets/images/hero-bg.jpg",
+      status: "published",
+      registrations: [],
+      createdAt: "2026-09-15T09:00:00Z"
+    }
+  ],
+  prayer_requests: [
+    {
+      id: "prayer-sample-1",
+      name: "Sister Deborah O.",
+      email: "deborah.sample@gmail.com",
+      phone: "+234 803 123 4567",
+      category: "Healing & Health",
+      request: "Please agree with me in prayer for complete healing in my mother's body and total restoration of her health.",
+      isConfidential: true,
+      status: "prayed",
+      createdAt: "2026-09-18T14:20:00Z"
+    },
+    {
+      id: "prayer-sample-2",
+      name: "Brother Emmanuel A.",
+      email: "emmanuel.sample@yahoo.com",
+      phone: "+234 812 987 6543",
+      category: "Career & Breakthrough",
+      request: "Praying for divine speed and open doors regarding my international job interview and business breakthrough.",
+      isConfidential: false,
+      status: "pending",
+      createdAt: "2026-09-21T09:15:00Z"
+    }
+  ],
+  counselling_requests: [
+    {
+      id: "counsel-1",
+      name: "Faith & Michael",
+      email: "michael.faith@gmail.com",
+      phone: "+234 701 234 5678",
+      preferredDate: "2026-09-25",
+      preferredTime: "11:00 AM",
+      counsellingType: "Premarital / Marriage",
+      message: "We are preparing for holy matrimony and would like to sit down with our Pastor for premarital counselling.",
+      status: "scheduled",
+      notes: "Confirmed for Friday morning at church pastoral office.",
+      createdAt: "2026-09-19T11:00:00Z"
+    }
+  ],
+  contacts: [
+    {
+      id: "contact-1",
+      name: "Elder Samuel Adeyemi",
+      email: "samuel.adeyemi@gmail.com",
+      phone: "+234 805 555 1234",
+      subject: "First Time Visitor Inquiry",
+      message: "Good day, I will be moving to Abule-Egba next month with my family. We would love to know more about the children church ministry.",
+      status: "replied",
+      createdAt: "2026-09-16T16:45:00Z"
+    }
+  ],
+  donations: [
+    {
+      id: "don-1",
+      donorName: "Anointed Giver",
+      email: "giver@ggeci.com",
+      amount: "50,000",
+      currency: "NGN",
+      purpose: "Building Project / Sanctuary Expansion",
+      method: "Bank Transfer",
+      reference: "TRX-GGECI-9921",
+      status: "Verified",
+      date: "2026-09-18"
+    }
+  ],
+  subscribers: [
+    {
+      id: "sub-1",
+      email: "blessing.grace@gmail.com",
+      subscribedAt: "2026-09-10T08:00:00Z",
+      active: true
+    },
+    {
+      id: "sub-2",
+      email: "david.embassy@yahoo.com",
+      subscribedAt: "2026-09-15T12:30:00Z",
+      active: true
+    }
+  ],
+  giving_accounts: [
+    {
+      id: "bank-1",
+      bankName: "Zenith Bank PLC",
+      accountNumber: "1012345678",
+      accountName: "Greater Grace Embassy Church Int'l",
+      purpose: "Tithe, Offering & General Support"
+    }
+  ]
+};
+
+// Memory cache to accelerate serverless read/writes
+let memoryData = null;
+
+function ensureDataDir() {
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+  } catch (err) {
+    console.warn("Notice: Could not create data directory, using memory store:", err.message);
+  }
+}
+
+function loadData() {
+  if (memoryData) return memoryData;
+
+  ensureDataDir();
+  try {
+    if (fs.existsSync(DB_FILE)) {
+      const raw = fs.readFileSync(DB_FILE, 'utf8');
+      memoryData = JSON.parse(raw);
+    } else {
+      memoryData = JSON.parse(JSON.stringify(INITIAL_DATA));
+      saveData(memoryData);
+    }
+  } catch (err) {
+    console.warn("Falling back to initial seed memory store:", err.message);
+    memoryData = JSON.parse(JSON.stringify(INITIAL_DATA));
+  }
+  return memoryData;
+}
+
+function saveData(data) {
+  memoryData = data;
+  try {
+    ensureDataDir();
+    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
+  } catch (err) {
+    console.warn("Could not persist database to disk:", err.message);
+  }
+}
+
+// Token generation and verification (HMAC SHA256)
+function generateSessionToken(username) {
+  const header = Buffer.from(JSON.stringify({ alg: 'HS256', typ: 'JWT' })).toString('base64url');
+  const payload = Buffer.from(JSON.stringify({
+    user: username,
+    role: 'admin',
+    iat: Math.floor(Date.now() / 1000),
+    exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60) // 24 hours validity
+  })).toString('base64url');
+  const signature = crypto.createHmac('sha256', SESSION_SECRET).update(`${header}.${payload}`).digest('base64url');
+  return `${header}.${payload}.${signature}`;
+}
+
+function verifySessionToken(token) {
+  if (!token || typeof token !== 'string') return null;
+  const parts = token.split('.');
+  if (parts.length !== 3) return null;
+  const [header, payload, signature] = parts;
+  const expectedSig = crypto.createHmac('sha256', SESSION_SECRET).update(`${header}.${payload}`).digest('base64url');
+  if (signature !== expectedSig) return null;
+
+  try {
+    const data = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'));
+    if (data.exp && data.exp < Math.floor(Date.now() / 1000)) {
+      return null; // Expired
+    }
+    return data;
+  } catch (err) {
+    return null;
+  }
+}
+
+// Database Operations
+const db = {
+  getCollection(collectionName) {
+    const data = loadData();
+    return data[collectionName] || [];
+  },
+
+  getItem(collectionName, id) {
+    const coll = this.getCollection(collectionName);
+    return coll.find(item => item.id === id) || null;
+  },
+
+  insert(collectionName, item) {
+    const data = loadData();
+    if (!data[collectionName]) data[collectionName] = [];
+    if (!item.id) {
+      item.id = `${collectionName}-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`;
+    }
+    if (!item.createdAt) {
+      item.createdAt = new Date().toISOString();
+    }
+    data[collectionName].unshift(item);
+    saveData(data);
+    return item;
+  },
+
+  update(collectionName, id, updates) {
+    const data = loadData();
+    if (!data[collectionName]) return null;
+    const index = data[collectionName].findIndex(item => item.id === id);
+    if (index === -1) return null;
+    data[collectionName][index] = { ...data[collectionName][index], ...updates, updatedAt: new Date().toISOString() };
+    saveData(data);
+    return data[collectionName][index];
+  },
+
+  delete(collectionName, id) {
+    const data = loadData();
+    if (!data[collectionName]) return false;
+    const initialLen = data[collectionName].length;
+    data[collectionName] = data[collectionName].filter(item => item.id !== id);
+    if (data[collectionName].length < initialLen) {
+      saveData(data);
+      return true;
+    }
+    return false;
+  },
+
+
+
+  generateSessionToken,
+  verifySessionToken
+};
+
+module.exports = db;

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Book a confidential pastoral counselling appointment with the leadership of Greater Grace Embassy Church International (GGECI) in Lagos, Nigeria.">
+  <title>Pastoral Counselling & Appointments | Greater Grace Embassy Church International</title>
+  <link rel="icon" type="image/png" href="/assets/images/logo.png">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <!-- Main Navigation Header -->
+  <header class="navbar" id="site-header">
+    <div class="container nav-container">
+      <a href="/index.html" class="brand-logo" aria-label="GGECI Home">
+        <img src="/assets/images/logo.png" alt="Greater Grace Embassy Church International Logo">
+        <div class="brand-title">
+          <span class="brand-name">GREATER GRACE</span>
+          <span class="brand-sub">EMBASSY CHURCH INT'L</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="/index.html" class="nav-link">Home</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+          <li><a href="/sermons.html" class="nav-link">Sermons</a></li>
+          <li><a href="/events.html" class="nav-link">Events</a></li>
+          <li><a href="/prayer-request.html" class="nav-link">Prayer Request</a></li>
+          <li><a href="/counselling.html" class="nav-link">Counselling</a></li>
+          <li><a href="/contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="/giving.html" class="btn btn-accent btn-sm">Give Online</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header Banner -->
+    <section class="page-header" aria-label="Counselling Header Banner">
+      <div class="container">
+        <h1 class="page-header-title">Pastoral Counselling</h1>
+        <p class="page-header-subtitle">
+          "Where no counsel is, the people fall: but in the multitude of counsellors there is safety." — Proverbs 11:14
+        </p>
+        <div class="breadcrumb">
+          <a href="/index.html">Home</a>
+          <span>/</span>
+          <span>Counselling</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Counselling Form & Info -->
+    <section class="section" aria-label="Appointment Request Section">
+      <div class="container">
+        <div class="grid-2" style="align-items:flex-start;">
+          <!-- Left: Appointment Request Form -->
+          <div class="form-card">
+            <span class="section-tag">Spiritual Guidance</span>
+            <h2 style="font-size:1.85rem; margin-bottom:1rem; color:var(--dark-navy);">Request an Appointment</h2>
+            <p style="color:var(--text-muted); font-size:0.92rem; margin-bottom:1.5rem;">
+              Our pastoral board is available to walk with you through life challenges, marriage preparation, spiritual
+              deliverance, and family decisions.
+            </p>
+
+            <!-- Alerts -->
+            <div id="counsel-alert-loading" class="form-alert form-alert-loading">
+              <span class="spinner spinner-primary"></span>
+              <span>Sending your counselling request to the pastoral secretariat...</span>
+            </div>
+            <div id="counsel-alert-success" class="form-alert form-alert-success"></div>
+            <div id="counsel-alert-error" class="form-alert form-alert-error"></div>
+
+            <form id="counselling-form" novalidate>
+              <div style="display:none;" aria-hidden="true">
+                <input type="text" id="counsel-organization" name="organization" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="counsel-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="counsel-name" class="form-control" placeholder="e.g. Brother Emmanuel Ade"
+                  required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="counsel-phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="counsel-phone" class="form-control" placeholder="+234 803 123 4567" required>
+                  <span class="form-hint">Used by pastor's office to confirm schedule.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="counsel-email">Email Address</label>
+                  <input type="email" id="counsel-email" class="form-control" placeholder="emmanuel@example.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="counsel-date">Preferred Date <span class="required">*</span></label>
+                  <input type="date" id="counsel-date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="counsel-time">Preferred Time Slot</label>
+                  <select id="counsel-time" class="form-select">
+                    <option value="Morning (10:00 AM - 1:00 PM)">Morning (10:00 AM - 1:00 PM)</option>
+                    <option value="Afternoon (1:00 PM - 4:00 PM)">Afternoon (1:00 PM - 4:00 PM)</option>
+                    <option value="Evening (4:00 PM - 6:30 PM)">Evening (4:00 PM - 6:30 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="counsel-type">Counselling Category</label>
+                <select id="counsel-type" class="form-select">
+                  <option value="General Spiritual Guidance">General Spiritual Guidance & Growth</option>
+                  <option value="Premarital / Marriage">Premarital / Marriage & Family</option>
+                  <option value="Spiritual Deliverance">Spiritual Deliverance & Breaking Curses</option>
+                  <option value="Career & Destiny">Career, Business & Purpose Discovery</option>
+                  <option value="Bereavement & Grief">Grief, Loss & Bereavement</option>
+                  <option value="Youth Mentorship">Youth & Young Adult Mentorship</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="counsel-message">Brief Note / Reason for Consultation</label>
+                <textarea id="counsel-message" class="form-textarea" rows="4"
+                  placeholder="Briefly describe what you would like to discuss with the minister..."></textarea>
+              </div>
+
+              <div
+                style="background:#F8FAFC; border:1px solid #E2E8F0; padding:1rem; border-radius:var(--radius-md); margin-bottom:1.5rem; font-size:0.85rem; color:var(--text-muted); display:flex; align-items:flex-start; gap:0.65rem;">
+                <img src="/assets/icons/shield.svg" alt="Privacy"
+                  style="width:18px; height:18px; flex-shrink:0; margin-top:2px;">
+                <span><strong>Strict Pastoral Confidentiality:</strong> Everything shared in this session is kept in
+                  complete confidence according to biblical ethics and pastoral privacy standards.</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg" id="counsel-submit-btn">
+                Book Counselling Appointment
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Guidance & Expectation Info -->
+          <div>
+            <div class="card" style="margin-bottom:2rem;">
+              <span class="badge badge-blue" style="margin-bottom:0.75rem;">Biblical Foundations</span>
+              <h3 style="font-size:1.35rem; color:var(--dark-navy); margin-bottom:1rem;">What to Expect</h3>
+              <p style="color:var(--text-muted); line-height:1.7; font-size:0.92rem; margin-bottom:1.25rem;">
+                Our counselling sessions are non-judgmental, Christ-centered, and deeply rooted in biblical wisdom.
+                Whether you are dealing with marital strains, spiritual warfare, emotional depression, or career
+                dilemmas, God's Word has the solution.
+              </p>
+              <ul style="color:var(--text-muted); font-size:0.92rem; line-height:1.8; list-style:none;">
+                <li>&#10003; <strong>Scriptural Direction:</strong> Clear guidance derived from God's Word</li>
+                <li>&#10003; <strong>Prophetic Intercession:</strong> Targeted prayer with anointing oil where needed
+                </li>
+                <li>&#10003; <strong>Practical Steps:</strong> Realistic, godly action plans to overcome challenges</li>
+                <li>&#10003; <strong>Follow-up Care:</strong> Continued pastoral support as you walk in victory</li>
+              </ul>
+            </div>
+
+            <div class="card" style="background:#FEF9E7; border-color:#FDE68A;">
+              <h4 style="font-size:1.1rem; color:#92400E; margin-bottom:0.5rem;">Urgent or Emergency Need?</h4>
+              <p style="font-size:0.9rem; color:#78350F; line-height:1.6; margin-bottom:1rem;">
+                If you are in immediate distress or requiring urgent prayer ministration, please call our pastoral
+                emergency lines directly:
+              </p>
+              <div style="font-weight:700; color:#92400E; font-size:1.1rem;">
+                +234 803 0701620
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Church Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/assets/images/logo.png" alt="GGECI Logo">
+          <p>
+            Greater Grace Embassy Church International is an apostolic commission called to proclaim the supernatural
+            grace of God, build faith, and raise global champions for Christ.
+          </p>
+          <div style="font-size:0.85rem; color:#94A3B8;">
+            Sanctuary: 1, Taiwo Adewole Street, Off Social Club Road, Abule-Egba, Lagos, Nigeria.
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ministries</h4>
+          <ul class="footer-links">
+            <li><a href="/sermons.html">Sermons Archive</a></li>
+            <li><a href="/events.html">Church Events</a></li>
+            <li><a href="/prayer-request.html">Prayer Requests</a></li>
+            <li><a href="/counselling.html">Pastoral Counselling</a></li>
+            <li><a href="/giving.html">Online Giving</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About Us</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">Our Vision & Mission</a></li>
+            <li><a href="/about.html#leadership">Senior Pastor</a></li>
+            <li><a href="/about.html#beliefs">What We Believe</a></li>
+            <li><a href="/contact.html">Sanctuary Location</a></li>
+            <li><a href="/newsletter.html">Weekly Bulletin</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Weekly Gatherings</h4>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Sundays:</strong> 10:00 AM<br>
+              Grace Celebration Service
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Wednesdays:</strong> 6:00 PM<br>
+              Bible Study
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <img src="/assets/icons/clock.svg" alt="Time">
+            <div>
+              <strong>Thursday:</strong> 10:00 AM<br>
+              Midweek Deliverance Service
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Greater Grace Embassy Church International (GGECI). All Rights Reserved.
+        </div>
+        <div class="footer-bottom-links">
+          <a href="/about.html">Beliefs</a>
+          <a href="/prayer-request.html">Prayer</a>
+          <a href="/giving.html">Giving</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <script src="/js/script.js"></script>
+  <script src="/js/counselling.js"></script>
+</body>
+
+</html>
