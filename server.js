@@ -78,7 +78,7 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // 2. Direct static handling for /images/ folder
+  // 2. Direct static handling for /images/ and /css/ assets
   if (pathname.startsWith('/images/')) {
     const imgPath = path.join(__dirname, pathname);
     return fs.stat(imgPath, (err, stats) => {
@@ -88,6 +88,18 @@ const server = http.createServer(async (req, res) => {
       }
       res.status(404).setHeader('Content-Type', 'text/plain');
       return res.end('Image Not Found');
+    });
+  }
+
+  if (pathname.startsWith('/css/') || pathname.endsWith('.css')) {
+    const cssPath = path.join(__dirname, pathname);
+    return fs.stat(cssPath, (err, stats) => {
+      if (!err && stats.isFile()) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        return serveFile(cssPath, res);
+      }
+      res.status(404).setHeader('Content-Type', 'text/plain');
+      return res.end('CSS File Not Found');
     });
   }
 
