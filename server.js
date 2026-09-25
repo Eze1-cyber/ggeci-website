@@ -78,7 +78,20 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  // 2. Static file serving with clean URLs
+  // 2. Direct static handling for /images/ folder
+  if (pathname.startsWith('/images/')) {
+    const imgPath = path.join(__dirname, pathname);
+    return fs.stat(imgPath, (err, stats) => {
+      if (!err && stats.isFile()) {
+        res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+        return serveFile(imgPath, res);
+      }
+      res.status(404).setHeader('Content-Type', 'text/plain');
+      return res.end('Image Not Found');
+    });
+  }
+
+  // 3. General static file serving with clean URLs
   let filePath = path.join(PUBLIC_DIR, pathname);
 
   // If path is root or folder
@@ -142,10 +155,14 @@ function serveFile(filePath, res) {
   });
 }
 
-server.listen(PORT, () => {
-  console.log(`=======================================================`);
-  console.log(` Greater Grace Embassy Church International (GGECI)`);
-  console.log(` Production Ready Server active at: http://localhost:${PORT}`);
-  console.log(` Website URL: http://localhost:${PORT}/`);
-  console.log(`=======================================================`);
-});
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`=======================================================`);
+    console.log(` Greater Grace Embassy Church International (GGECI)`);
+    console.log(` Production Ready Server active at: http://localhost:${PORT}`);
+    console.log(` Website URL: http://localhost:${PORT}/`);
+    console.log(`=======================================================`);
+  });
+}
+
+module.exports = server;
