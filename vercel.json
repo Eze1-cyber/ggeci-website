@@ -4,7 +4,7 @@
   "trailingSlash": false,
   "functions": {
     "server.js": {
-      "includeFiles": "{css/**,style.css,images/**,data/**}"
+      "includeFiles": "{css/**,style.css,images/**,data/**,*.html,js/**}"
     }
   },
   "headers": [
@@ -47,5 +47,8 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/server.js" }
   ]
 }
