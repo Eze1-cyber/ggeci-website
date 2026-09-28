@@ -209,10 +209,10 @@ function renderSermons(sermons) {
       <div class="card-body">
         <div class="card-meta">
           <span class="card-meta-item">
-            <img src="/assets/assets/icons/assets/icons/assets/icons/calendar.svg" alt="Date"> ${formatDate(s.date)}
+            <img src="/assets/icons/assets/icons/assets/icons/calendar.svg" alt="Date"> ${formatDate(s.date)}
           </span>
           <span class="card-meta-item">
-            <img src="/assets/assets/icons/assets/icons/bible.svg" alt="Scripture"> ${s.scripture || 'Holy Bible'}
+            <img src="/assets/icons/assets/icons/bible.svg" alt="Scripture"> ${s.scripture || 'Holy Bible'}
           </span>
         </div>
         <h3 class="card-title" style="color:var(--on-surface);">${s.title}</h3>

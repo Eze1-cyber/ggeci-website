@@ -131,13 +131,13 @@ function renderEvents(events) {
       <div class="card-body">
         <div class="card-meta" style="flex-direction:column; align-items:flex-start; gap:0.4rem;">
           <span class="card-meta-item" style="font-weight:600; color:var(--on-surface);">
-            <img src="/assets/assets/icons/assets/icons/assets/icons/calendar.svg" alt="Date"> ${e.date}
+            <img src="/assets/icons/assets/icons/assets/icons/calendar.svg" alt="Date"> ${e.date}
           </span>
           <span class="card-meta-item" style="color:var(--on-surface-variant);">
-            <img src="/assets/assets/icons/assets/icons/clock.svg" alt="Time"> ${e.time}
+            <img src="/assets/icons/assets/icons/clock.svg" alt="Time"> ${e.time}
           </span>
           <span class="card-meta-item" style="color:var(--on-surface-variant);">
-            <img src="/assets/assets/icons/assets/icons/map-pin.svg" alt="Location"> ${e.location}
+            <img src="/assets/icons/assets/icons/map-pin.svg" alt="Location"> ${e.location}
           </span>
         </div>
         <h3 class="card-title" style="margin-top:0.75rem; color:var(--on-surface); font-size:1.3rem;">${e.title}</h3>
