@@ -209,10 +209,10 @@ function renderSermons(sermons) {
       <div class="card-body">
         <div class="card-meta">
           <span class="card-meta-item">
-            <img src="/assets/icons/calendar.svg" alt="Date"> ${formatDate(s.date)}
+            <img src="/assets/assets/calendar.svg" alt="Date"> ${formatDate(s.date)}
           </span>
           <span class="card-meta-item">
-            <img src="/assets/icons/bible.svg" alt="Scripture"> ${s.scripture || 'Holy Bible'}
+            <img src="/assets/assets/bible.svg" alt="Scripture"> ${s.scripture || 'Holy Bible'}
           </span>
         </div>
         <h3 class="card-title" style="color:var(--on-surface);">${s.title}</h3>
@@ -269,7 +269,7 @@ function applyFilters() {
 }
 
 // Media Player Modal
-window.openSermonModal = function(id) {
+window.openSermonModal = function (id) {
   const sermon = allSermons.find(s => s.id === id) || FALLBACK_SERMONS.find(s => s.id === id);
   if (!sermon) return;
 

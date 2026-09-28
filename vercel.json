@@ -1,34 +1,18 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "functions": {
-    "server.js": {
-      "includeFiles": "{css/**,style.css,images/**,data/**,*.html,js/**}"
-    }
-  },
-  "headers": [
+  "builds": [
     {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        }
-      ]
-    },
+      "src": "server.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "server.js"
+    }
+  ],
+  "headers": [
     {
       "source": "/images/(.*)",
       "headers": [
@@ -37,18 +21,6 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
-    },
-    {
-      "source": "/css/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/server.js" }
   ]
 }

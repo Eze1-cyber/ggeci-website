@@ -139,7 +139,7 @@ const server = http.createServer(async (req, res) => {
           <head>
             <meta charset="UTF-8">
             <title>Page Not Found - GGECI</title>
-            <link rel="stylesheet" href="/css/style.css">
+            <link rel="stylesheet" href="/style.css">
           </head>
           <body style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:100vh; text-align:center; padding:20px;">
             <h1>404 - Page Not Found</h1>
