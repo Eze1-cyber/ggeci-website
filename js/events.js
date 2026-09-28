@@ -24,7 +24,7 @@ const FALLBACK_EVENTS = [
     description: "Annual whole-church thanksgiving service celebrating God’s faithfulness, supernatural grace, open doors, and miraculous breakthroughs in the lives of all members and families.",
     speaker: "Pastor Justina Eze & Pastoral Team",
     category: "Thanksgiving",
-    image: "/images/hero-bg.jpg"
+    image: "/images/hero.jpg"
   },
   {
     id: "event-7",
@@ -68,7 +68,7 @@ const FALLBACK_EVENTS = [
     description: "Transition victoriously into the New Year with prevailing prayer, prophetic declarations, uninhibited praise, and receiving God's theme and direction for 2027.",
     speaker: "Pastor Justina Eze & Pastoral Team",
     category: "Crossover / Vigil",
-    image: "/images/hero-bg.jpg"
+    image: "/images/hero.jpg"
   }
 ];
 
@@ -123,7 +123,7 @@ function renderEvents(events) {
   container.innerHTML = events.map(e => `
     <article class="card card-media" data-id="${e.id}">
       <div class="card-image-wrap">
-        <img src="${e.image || '/images/hero-bg.jpg'}" alt="${e.title}" loading="lazy">
+        <img src="${e.image || '/images/hero.jpg'}" alt="${e.title}" loading="lazy">
         <div class="card-badge-overlay">
           <span class="badge badge-gold">${e.category || 'Special Program'}</span>
         </div>
@@ -131,13 +131,13 @@ function renderEvents(events) {
       <div class="card-body">
         <div class="card-meta" style="flex-direction:column; align-items:flex-start; gap:0.4rem;">
           <span class="card-meta-item" style="font-weight:600; color:var(--on-surface);">
-            <img src="/assets/assets/calendar.svg" alt="Date"> ${e.date}
+            <img src="/assets/assets/icons/calendar.svg" alt="Date"> ${e.date}
           </span>
           <span class="card-meta-item" style="color:var(--on-surface-variant);">
-            <img src="/assets/assets/clock.svg" alt="Time"> ${e.time}
+            <img src="/assets/assets/icons/clock.svg" alt="Time"> ${e.time}
           </span>
           <span class="card-meta-item" style="color:var(--on-surface-variant);">
-            <img src="/assets/assets/map-pin.svg" alt="Location"> ${e.location}
+            <img src="/assets/assets/icons/map-pin.svg" alt="Location"> ${e.location}
           </span>
         </div>
         <h3 class="card-title" style="margin-top:0.75rem; color:var(--on-surface); font-size:1.3rem;">${e.title}</h3>
