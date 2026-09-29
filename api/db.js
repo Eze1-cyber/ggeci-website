@@ -44,7 +44,7 @@ const INITIAL_DATA = {
       audioUrl: "",
       videoUrl: "",
       category: "Deliverance",
-      thumbnail: "/images/hero-bg.jpg",
+      thumbnail: "/images/hero.jpg",
       status: "published",
       createdAt: "2026-09-13T10:00:00Z"
     },
@@ -128,7 +128,7 @@ const INITIAL_DATA = {
       description: "Annual whole-church thanksgiving service celebrating God’s faithfulness, supernatural grace, open doors, and miraculous breakthroughs in the lives of all members and families.",
       speaker: "Pastor Justina Eze & Pastoral Team",
       category: "Thanksgiving",
-      image: "/images/hero-bg.jpg",
+      image: "/images/hero.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -184,7 +184,7 @@ const INITIAL_DATA = {
       description: "Transition victoriously into the New Year with prevailing prayer, prophetic declarations, uninhibited praise, and receiving God's theme and direction for 2027.",
       speaker: "Pastor Justina Eze & Pastoral Team",
       category: "Crossover / Vigil",
-      image: "/images/hero-bg.jpg",
+      image: "/images/hero.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-20T08:00:00Z"
@@ -212,7 +212,7 @@ const INITIAL_DATA = {
       description: "All-night praise, prophetic decrees, intercession, and breakthrough miracles under the atmosphere of holy adoration.",
       speaker: "GGECI Choir & Ministers",
       category: "Vigil / Praise",
-      image: "/images/hero-bg.jpg",
+      image: "/images/hero.jpg",
       status: "published",
       registrations: [],
       createdAt: "2026-09-15T09:00:00Z"

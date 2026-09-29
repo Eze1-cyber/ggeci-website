@@ -98,7 +98,7 @@ module.exports = async function handler(req, res) {
       description: (description || '').trim(),
       speaker: (speaker || 'Pastoral Board').trim(),
       category: category || 'Special Service',
-      image: image || '/images/hero-bg.jpg',
+      image: image || '/images/hero.jpg',
       status: status === 'draft' ? 'draft' : 'published',
       registrations: []
     });
