@@ -1,6 +1,20 @@
 {
   "sermons": [
     {
+      "id": "sermon-7",
+      "title": "CARRY THE KINGDOM",
+      "speaker": "Pastor J. K. Eze",
+      "date": "2026-10-04",
+      "scripture": "Matthew 6:9–10, Matthew 28:18–19, Luke 17:21",
+      "description": "Ministering: Pastor J. K. Eze\nText: Matthew 6:9–10, Matthew 28:18–19, Luke 17:21\n\nChurch, when Jesus taught His disciples how to pray, He said:\n\n“Your kingdom come, Your will be done on earth as it is in heaven.” — Matthew 6:10\n\nAt that time, Jesus had not yet gone to the cross. But after His death and resurrection, He came back and said:\n\n“All authority has been given to Me in heaven and on earth. Go therefore…” — Matthew 28:18–19\n\nSomething changed!\n\nBefore, they were saying, “Lord, let Your Kingdom come.”\n\nAfter the resurrection, Jesus said, “Go!”\n\nWhy?\n\nBecause the Kingdom had come, and now they were carrying it.\n\nTHE KINGDOM IS IN YOU!\n\nJesus said:\n\n“The kingdom of God is within you.” — Luke 17:21\n\nIf you are born again, you are carrying something.\n\nYou are carrying the presence of God.\n\nYou are carrying the life of Christ.\n\nYou are carrying the authority of Jesus.\n\nSo when you enter your house, don’t just enter as Brother this or Sister that.\n\nEnter as a Kingdom carrier!\n\nWhen you enter your office on Monday morning, don’t join everybody to say:\n\n“Ah! Nigeria don hard o!”\n\nYes, things may be difficult, but you carry something greater.\n\nSay:\n\n“God is with me. I will not live by fear. I will not compromise. I will represent Christ here.”\n\nThat’s Kingdom living!\n\n⸻\n\nLOOK AT JOSEPH\n\nJoseph entered Egypt as a slave.\n\nHe didn’t enter Egypt with money.\n\nHe didn’t enter Egypt with connections.\n\nBut he entered Egypt with God’s presence.\n\nThe Bible says:\n\n“The LORD was with Joseph.” — Genesis 39:2\n\nAnd everywhere Joseph went, things began to change.\n\nEven Potiphar’s house was blessed because Joseph was there.\n\nImagine that!\n\nOne man carrying God affected an entire household.\n\nMy brother, my sister, don’t underestimate yourself.\n\nMaybe you are the only Christian in your department.\n\nMaybe you’re the only serious Christian in your business circle.\n\nMaybe your family members are not born again.\n\nDon’t complain—carry the Kingdom!\n\n⸻\n\nDANIEL IN BABYLON\n\nDaniel was living in Babylon.\n\nBabylon was not a godly environment.\n\nBut Daniel refused to allow Babylon to enter him.\n\nThe Bible says:\n\n“Daniel purposed in his heart that he would not defile himself.” — Daniel 1:8\n\nIn Nigeria today, people may tell you:\n\n“Everybody is doing it.”\n\nBut your answer should be:\n\n“I am not everybody. I belong to Jesus.”\n\nThey say, “Just collect the money.”\n\nYou say, “No, I can’t.”\n\nThey say, “Everybody cheats customers.”\n\nYou say, “Not me.”\n\nThey say, “Just change the figures.”\n\nYou say, “I represent Christ.”\n\nThat’s Kingdom!\n\n⸻\n\nYOU ARE AN AMBASSADOR\n\n2 Corinthians 5:20 says:\n\n“We are ambassadors for Christ.”\n\nAn ambassador represents his country.\n\nSo when you enter your workplace, Christ is being represented.\n\nWhen you enter your school, Christ is being represented.\n\nWhen you’re doing business, Christ is being represented.\n\nEven when you’re driving through Lagos traffic and somebody cuts you off—Christ is still being represented! 😂\n\nDon’t start:\n\n“Oga, are you mad?!”\n\nRemember:\n\nKingdom carrier!\n\nSometimes the greatest sermon you will preach is not from a pulpit.\n\nIt’s how you behave when somebody annoys you.\n\n⸻\n\nCHURCH, IT’S TIME TO CARRY THE KINGDOM\n\nWe cannot spend all our time praying:\n\n“God, change Nigeria!”\n\nAnd God is saying:\n\n“I have put you in Nigeria. Start with yourself.”\n\nWe pray for peace—be a peacemaker.\n\nWe pray for honesty—be honest.\n\nWe pray for revival—preach Christ.\n\nWe pray for change—be part of the change.\n\nWe pray:\n\n“Your Kingdom come!”\n\nAnd God says:\n\n“Go!”\n\nBecause the Kingdom is already in you.\n\nSo this week, when you go to work, go with the Kingdom.\n\nWhen you enter your business, carry the Kingdom.\n\nWhen you enter your family, carry the Kingdom.\n\nWhen you enter your community, carry the Kingdom.\n\nDon’t just talk about Jesus. Let people see Jesus through your life.\n\nSay to somebody:\n\n“I carry the Kingdom!”\n\n“Wherever I go, Christ is represented!”\n\n“Darkness will not control my environment!”\n\n“I am a Kingdom ambassador!”\n\n“Nigeria will see Christ through me!”\n\nIn Jesus’ Name, Amen!",
+      "audioUrl": "",
+      "videoUrl": "",
+      "category": "Grace & Faith",
+      "thumbnail": "/images/sermon-banner.jpg",
+      "status": "published",
+      "createdAt": "2026-10-04T10:00:00Z"
+    },
+    {
       "id": "sermon-1",
       "title": "Walking in Supernatural Grace and Favor",
       "speaker": "Senior Pastor",
@@ -207,6 +221,17 @@
       "request": "Praying for divine health and strength in my family in Lagos.",
       "isConfidential": true,
       "status": "pending",
+      "id": "prayer_requests-1791153390895-wq37hp",
+      "createdAt": "2026-10-04T22:36:30.895Z"
+    },
+    {
+      "name": "Sister Comfort Blessing",
+      "email": "comfort@example.com",
+      "phone": "+234 803 999 0000",
+      "category": "Healing & Health",
+      "request": "Praying for divine health and strength in my family in Lagos.",
+      "isConfidential": true,
+      "status": "pending",
       "id": "prayer_requests-1790363785711-a1k3m1",
       "createdAt": "2026-09-25T19:16:25.711Z"
     },
@@ -255,6 +280,19 @@
       "message": "Need spiritual guidance regarding career transition.",
       "status": "pending",
       "notes": "",
+      "id": "counselling_requests-1791153390925-oye70z",
+      "createdAt": "2026-10-04T22:36:30.925Z"
+    },
+    {
+      "name": "Brother Peter",
+      "email": "",
+      "phone": "+234 703 111 2233",
+      "preferredDate": "2026-10-15",
+      "preferredTime": "Morning (10:00 AM - 1:00 PM)",
+      "counsellingType": "Career & Destiny",
+      "message": "Need spiritual guidance regarding career transition.",
+      "status": "pending",
+      "notes": "",
       "id": "counselling_requests-1790363785734-nebnnu",
       "createdAt": "2026-09-25T19:16:25.734Z"
     },
@@ -286,6 +324,16 @@
     }
   ],
   "contacts": [
+    {
+      "name": "Brother David",
+      "email": "david@example.com",
+      "phone": "+234 812 345 6789",
+      "subject": "Inquiry about Wednesday Service",
+      "message": "Hello church, I would like to attend this Wednesday service.",
+      "status": "unread",
+      "id": "contacts-1791153390907-97vs7j",
+      "createdAt": "2026-10-04T22:36:30.907Z"
+    },
     {
       "name": "Brother David",
       "email": "david@example.com",
@@ -332,6 +380,13 @@
     }
   ],
   "subscribers": [
+    {
+      "email": "subscriber_1791153390935@example.com",
+      "subscribedAt": "2026-10-04T22:36:30.941Z",
+      "active": true,
+      "id": "subscribers-1791153390941-czur7l",
+      "createdAt": "2026-10-04T22:36:30.941Z"
+    },
     {
       "email": "subscriber_1790363785750@example.com",
       "subscribedAt": "2026-09-25T19:16:25.752Z",

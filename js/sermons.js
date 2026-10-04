@@ -1,9 +1,226 @@
-﻿/**
+/**
  * Greater Grace Embassy Church International (GGECI)
  * Sermons Archive & Media Streaming (Vanilla JavaScript)
  */
 
 const FALLBACK_SERMONS = [
+  {
+    id: "sermon-7",
+    title: "CARRY THE KINGDOM",
+    speaker: "Pastor J. K. Eze",
+    date: "2026-10-04",
+    scripture: "Matthew 6:9–10, Matthew 28:18–19, Luke 17:21",
+    description: `Ministering: Pastor J. K. Eze
+Text: Matthew 6:9–10, Matthew 28:18–19, Luke 17:21
+
+Church, when Jesus taught His disciples how to pray, He said:
+
+“Your kingdom come, Your will be done on earth as it is in heaven.” — Matthew 6:10
+
+At that time, Jesus had not yet gone to the cross. But after His death and resurrection, He came back and said:
+
+“All authority has been given to Me in heaven and on earth. Go therefore…” — Matthew 28:18–19
+
+Something changed!
+
+Before, they were saying, “Lord, let Your Kingdom come.”
+
+After the resurrection, Jesus said, “Go!”
+
+Why?
+
+Because the Kingdom had come, and now they were carrying it.
+
+THE KINGDOM IS IN YOU!
+
+Jesus said:
+
+“The kingdom of God is within you.” — Luke 17:21
+
+If you are born again, you are carrying something.
+
+You are carrying the presence of God.
+
+You are carrying the life of Christ.
+
+You are carrying the authority of Jesus.
+
+So when you enter your house, don’t just enter as Brother this or Sister that.
+
+Enter as a Kingdom carrier!
+
+When you enter your office on Monday morning, don’t join everybody to say:
+
+“Ah! Nigeria don hard o!”
+
+Yes, things may be difficult, but you carry something greater.
+
+Say:
+
+“God is with me. I will not live by fear. I will not compromise. I will represent Christ here.”
+
+That’s Kingdom living!
+
+⸻
+
+LOOK AT JOSEPH
+
+Joseph entered Egypt as a slave.
+
+He didn’t enter Egypt with money.
+
+He didn’t enter Egypt with connections.
+
+But he entered Egypt with God’s presence.
+
+The Bible says:
+
+“The LORD was with Joseph.” — Genesis 39:2
+
+And everywhere Joseph went, things began to change.
+
+Even Potiphar’s house was blessed because Joseph was there.
+
+Imagine that!
+
+One man carrying God affected an entire household.
+
+My brother, my sister, don’t underestimate yourself.
+
+Maybe you are the only Christian in your department.
+
+Maybe you’re the only serious Christian in your business circle.
+
+Maybe your family members are not born again.
+
+Don’t complain—carry the Kingdom!
+
+⸻
+
+DANIEL IN BABYLON
+
+Daniel was living in Babylon.
+
+Babylon was not a godly environment.
+
+But Daniel refused to allow Babylon to enter him.
+
+The Bible says:
+
+“Daniel purposed in his heart that he would not defile himself.” — Daniel 1:8
+
+In Nigeria today, people may tell you:
+
+“Everybody is doing it.”
+
+But your answer should be:
+
+“I am not everybody. I belong to Jesus.”
+
+They say, “Just collect the money.”
+
+You say, “No, I can’t.”
+
+They say, “Everybody cheats customers.”
+
+You say, “Not me.”
+
+They say, “Just change the figures.”
+
+You say, “I represent Christ.”
+
+That’s Kingdom!
+
+⸻
+
+YOU ARE AN AMBASSADOR
+
+2 Corinthians 5:20 says:
+
+“We are ambassadors for Christ.”
+
+An ambassador represents his country.
+
+So when you enter your workplace, Christ is being represented.
+
+When you enter your school, Christ is being represented.
+
+When you’re doing business, Christ is being represented.
+
+Even when you’re driving through Lagos traffic and somebody cuts you off—Christ is still being represented! 😂
+
+Don’t start:
+
+“Oga, are you mad?!”
+
+Remember:
+
+Kingdom carrier!
+
+Sometimes the greatest sermon you will preach is not from a pulpit.
+
+It’s how you behave when somebody annoys you.
+
+⸻
+
+CHURCH, IT’S TIME TO CARRY THE KINGDOM
+
+We cannot spend all our time praying:
+
+“God, change Nigeria!”
+
+And God is saying:
+
+“I have put you in Nigeria. Start with yourself.”
+
+We pray for peace—be a peacemaker.
+
+We pray for honesty—be honest.
+
+We pray for revival—preach Christ.
+
+We pray for change—be part of the change.
+
+We pray:
+
+“Your Kingdom come!”
+
+And God says:
+
+“Go!”
+
+Because the Kingdom is already in you.
+
+So this week, when you go to work, go with the Kingdom.
+
+When you enter your business, carry the Kingdom.
+
+When you enter your family, carry the Kingdom.
+
+When you enter your community, carry the Kingdom.
+
+Don’t just talk about Jesus. Let people see Jesus through your life.
+
+Say to somebody:
+
+“I carry the Kingdom!”
+
+“Wherever I go, Christ is represented!”
+
+“Darkness will not control my environment!”
+
+“I am a Kingdom ambassador!”
+
+“Nigeria will see Christ through me!”
+
+In Jesus’ Name, Amen!`,
+    audioUrl: "",
+    videoUrl: "",
+    category: "Grace & Faith",
+    thumbnail: "/images/sermon-banner.jpg",
+    status: "published",
+    createdAt: "2026-10-04T10:00:00Z"
+  },
   {
     id: "sermon-5",
     title: "THERE IS AN END",
