@@ -1,6 +1,19 @@
 {
   "version": 2,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "ggeci.com"
+        }
+      ],
+      "destination": "https://www.ggeci.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/images/(.*)",
