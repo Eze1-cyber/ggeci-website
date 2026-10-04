@@ -221,6 +221,28 @@
       "request": "Praying for divine health and strength in my family in Lagos.",
       "isConfidential": true,
       "status": "pending",
+      "id": "prayer_requests-1791158127294-6xxdf0",
+      "createdAt": "2026-10-04T23:55:27.294Z"
+    },
+    {
+      "name": "Sister Comfort Blessing",
+      "email": "comfort@example.com",
+      "phone": "+234 803 999 0000",
+      "category": "Healing & Health",
+      "request": "Praying for divine health and strength in my family in Lagos.",
+      "isConfidential": true,
+      "status": "pending",
+      "id": "prayer_requests-1791154024812-br3r7n",
+      "createdAt": "2026-10-04T22:47:04.812Z"
+    },
+    {
+      "name": "Sister Comfort Blessing",
+      "email": "comfort@example.com",
+      "phone": "+234 803 999 0000",
+      "category": "Healing & Health",
+      "request": "Praying for divine health and strength in my family in Lagos.",
+      "isConfidential": true,
+      "status": "pending",
       "id": "prayer_requests-1791153390895-wq37hp",
       "createdAt": "2026-10-04T22:36:30.895Z"
     },
@@ -270,6 +292,32 @@
     }
   ],
   "counselling_requests": [
+    {
+      "name": "Brother Peter",
+      "email": "",
+      "phone": "+234 703 111 2233",
+      "preferredDate": "2026-10-15",
+      "preferredTime": "Morning (10:00 AM - 1:00 PM)",
+      "counsellingType": "Career & Destiny",
+      "message": "Need spiritual guidance regarding career transition.",
+      "status": "pending",
+      "notes": "",
+      "id": "counselling_requests-1791158127324-0qiy1i",
+      "createdAt": "2026-10-04T23:55:27.324Z"
+    },
+    {
+      "name": "Brother Peter",
+      "email": "",
+      "phone": "+234 703 111 2233",
+      "preferredDate": "2026-10-15",
+      "preferredTime": "Morning (10:00 AM - 1:00 PM)",
+      "counsellingType": "Career & Destiny",
+      "message": "Need spiritual guidance regarding career transition.",
+      "status": "pending",
+      "notes": "",
+      "id": "counselling_requests-1791154024837-j2jpqk",
+      "createdAt": "2026-10-04T22:47:04.837Z"
+    },
     {
       "name": "Brother Peter",
       "email": "",
@@ -331,6 +379,26 @@
       "subject": "Inquiry about Wednesday Service",
       "message": "Hello church, I would like to attend this Wednesday service.",
       "status": "unread",
+      "id": "contacts-1791158127304-ds7d88",
+      "createdAt": "2026-10-04T23:55:27.304Z"
+    },
+    {
+      "name": "Brother David",
+      "email": "david@example.com",
+      "phone": "+234 812 345 6789",
+      "subject": "Inquiry about Wednesday Service",
+      "message": "Hello church, I would like to attend this Wednesday service.",
+      "status": "unread",
+      "id": "contacts-1791154024820-4qbge8",
+      "createdAt": "2026-10-04T22:47:04.820Z"
+    },
+    {
+      "name": "Brother David",
+      "email": "david@example.com",
+      "phone": "+234 812 345 6789",
+      "subject": "Inquiry about Wednesday Service",
+      "message": "Hello church, I would like to attend this Wednesday service.",
+      "status": "unread",
       "id": "contacts-1791153390907-97vs7j",
       "createdAt": "2026-10-04T22:36:30.907Z"
     },
@@ -380,6 +448,20 @@
     }
   ],
   "subscribers": [
+    {
+      "email": "subscriber_1791158127340@example.com",
+      "subscribedAt": "2026-10-04T23:55:27.342Z",
+      "active": true,
+      "id": "subscribers-1791158127342-6luzqu",
+      "createdAt": "2026-10-04T23:55:27.342Z"
+    },
+    {
+      "email": "subscriber_1791154024855@example.com",
+      "subscribedAt": "2026-10-04T22:47:04.857Z",
+      "active": true,
+      "id": "subscribers-1791154024857-rgikmc",
+      "createdAt": "2026-10-04T22:47:04.857Z"
+    },
     {
       "email": "subscriber_1791153390935@example.com",
       "subscribedAt": "2026-10-04T22:36:30.941Z",
