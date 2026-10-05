@@ -315,7 +315,7 @@ const INITIAL_DATA = {
     {
       id: "bank-1",
       bankName: "Zenith Bank PLC",
-      accountNumber: "1012345678",
+      accountNumber: "1013834349",
       accountName: "Greater Grace Embassy Church Int'l",
       purpose: "Tithe, Offering & General Support"
     }
