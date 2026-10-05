@@ -55,30 +55,53 @@ async function checkReturnUrlPayment() {
   if (!reference) return;
 
   const alertSuccess = document.getElementById('paystack-alert-success');
-  
+  const alertError = document.getElementById('paystack-alert-error');
+
+  let pending = null;
+  try {
+    const raw = sessionStorage.getItem('ggeci_pending_giving');
+    if (raw) pending = JSON.parse(raw);
+  } catch (e) {}
+
+  if (!pending || !pending.amount) {
+    return;
+  }
+
   try {
     const res = await fetch('/api/giving', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        donorName: 'Online Giver',
-        email: 'giver@ggeci.com',
-        amount: '0',
+        donorName: pending.name || 'Online Giver',
+        email: pending.email || 'giver@ggeci.com',
+        amount: pending.amount.toString(),
         currency: 'NGN',
-        purpose: 'Online Giving (Paystack Return)',
-        method: 'Paystack Checkout',
+        purpose: pending.purpose || 'Online Giving',
+        method: 'Paystack Card/Bank',
         reference: reference
       })
     });
     
     const data = await res.json();
-    if (res.ok && data.success) {
+    if (res.ok && data.success && data.verified === true) {
+      try { sessionStorage.removeItem('ggeci_pending_giving'); } catch (e) {}
+      if (alertError) alertError.classList.remove('show');
       if (alertSuccess) {
-        alertSuccess.innerHTML = `<strong>Hallelujah! Payment Received!</strong><br>Ref: <code>${reference}</code>. ${data.message}`;
+        alertSuccess.innerHTML = `<strong>Hallelujah! Payment Verified!</strong><br>Ref: <code>${reference}</code>. ${data.message}`;
         alertSuccess.classList.add('show');
       }
       if (window.showToast) {
-        window.showToast('Payment successful! May God bless you abundantly.', 'success');
+        window.showToast('Payment verified! May God bless you abundantly.', 'success');
+      }
+    } else {
+      if (alertSuccess) alertSuccess.classList.remove('show');
+      const errorMsg = (data && data.error) || 'Payment verification could not be confirmed.';
+      if (alertError) {
+        alertError.innerHTML = `<strong>Payment Verification Alert:</strong><br>${errorMsg}<br>Ref: <code>${reference}</code>`;
+        alertError.classList.add('show');
+      }
+      if (window.showToast) {
+        window.showToast(errorMsg, 'error');
       }
     }
   } catch (err) {
@@ -231,6 +254,16 @@ window.payWithPaystack = function() {
     btnGiveNow.innerHTML = 'Connecting Paystack...';
   }
 
+  // Stash pending donation details in case of 3DS redirect authentication
+  try {
+    sessionStorage.setItem('ggeci_pending_giving', JSON.stringify({
+      name,
+      email,
+      amount: amount.toString(),
+      purpose
+    }));
+  } catch (e) {}
+
   // Check if live/test public key exists
   const activeKey = paymentConfig.publicKey || 'pk_test_9e112e5e5b25fcf5f05b45bb6626bf308e80ac5b';
 
@@ -239,7 +272,17 @@ window.payWithPaystack = function() {
     const script = document.createElement('script');
     script.src = 'https://js.paystack.co/v1/inline.js';
     script.onload = () => launchPaystackCheckout(activeKey, amount, email, name, purpose);
-    script.onerror = () => handlePaystackFallback(amount, email, name, purpose);
+    script.onerror = () => {
+      if (btnGiveNow) {
+        btnGiveNow.disabled = false;
+        btnGiveNow.innerHTML = 'Give Now &rarr;';
+      }
+      if (alertError) {
+        alertError.innerHTML = '<strong>Connection Error:</strong> Unable to load the Paystack checkout module. Please check your internet connection.';
+        alertError.classList.add('show');
+      }
+      if (window.showToast) window.showToast('Could not load Paystack checkout.', 'error');
+    };
     document.head.appendChild(script);
   } else {
     launchPaystackCheckout(activeKey, amount, email, name, purpose);
@@ -248,6 +291,7 @@ window.payWithPaystack = function() {
 
 function launchPaystackCheckout(publicKey, amount, email, name, purpose) {
   const btnGiveNow = document.getElementById('btn-give-now');
+  const alertError = document.getElementById('paystack-alert-error');
   
   try {
     const handler = PaystackPop.setup({
@@ -276,19 +320,25 @@ function launchPaystackCheckout(publicKey, amount, email, name, purpose) {
 
     handler.openIframe();
   } catch (err) {
-    console.warn('Paystack inline SDK error, launching direct simulation handler:', err);
-    handlePaystackFallback(amount, email, name, purpose);
+    console.warn('Paystack inline SDK error:', err);
+    if (btnGiveNow) {
+      btnGiveNow.disabled = false;
+      btnGiveNow.innerHTML = 'Give Now &rarr;';
+    }
+    if (alertError) {
+      alertError.innerHTML = '<strong>Error opening checkout:</strong> Unable to initialize Paystack checkout. Please check your internet connection.';
+      alertError.classList.add('show');
+    }
   }
-}
-
-function handlePaystackFallback(amount, email, name, purpose) {
-  const reference = `PAYSTACK-DEMO-${Date.now()}`;
-  recordSuccessfulPayment(name, email, amount, purpose, reference);
 }
 
 async function recordSuccessfulPayment(name, email, amount, purpose, reference) {
   const btnGiveNow = document.getElementById('btn-give-now');
   const alertSuccess = document.getElementById('paystack-alert-success');
+  const alertError = document.getElementById('paystack-alert-error');
+
+  if (alertSuccess) alertSuccess.classList.remove('show');
+  if (alertError) alertError.classList.remove('show');
 
   try {
     const res = await fetch('/api/giving', {
@@ -306,7 +356,11 @@ async function recordSuccessfulPayment(name, email, amount, purpose, reference) 
     });
 
     const data = await res.json();
-    if (res.ok && data.success) {
+
+    // Strictly require HTTP 200, success flag, and explicit verified confirmation from backend
+    if (res.ok && data.success && data.verified === true) {
+      try { sessionStorage.removeItem('ggeci_pending_giving'); } catch (e) {}
+
       if (alertSuccess) {
         alertSuccess.innerHTML = `
           <strong>Hallelujah! Payment Successfully Processed!</strong><br>
@@ -321,11 +375,31 @@ async function recordSuccessfulPayment(name, email, amount, purpose, reference) 
       const givingForm = document.getElementById('paystack-giving-form');
       if (givingForm) givingForm.reset();
 
-      if (window.showToast) window.showToast('Payment successful! May God bless your giving abundantly.', 'success');
+      if (window.showToast) window.showToast('Payment verified successfully! May God bless your giving abundantly.', 'success');
+    } else {
+      // Verification failed or was rejected by server
+      const failMsg = (data && data.error) ? data.error : 'Payment verification could not be confirmed. If your account was debited, please contact the church office.';
+      if (alertError) {
+        alertError.innerHTML = `
+          <strong>Payment Verification Alert:</strong><br>
+          ${failMsg}<br>
+          Reference: <code>${reference}</code>
+        `;
+        alertError.classList.add('show');
+      }
+      if (window.showToast) window.showToast(failMsg, 'error');
     }
   } catch (err) {
-    console.error('Error posting payment record:', err);
-    if (window.showToast) window.showToast('Payment completed! Thank you for giving.', 'success');
+    console.error('Error verifying payment record:', err);
+    const networkMsg = `A network error occurred while verifying your payment with the server. If debited, please retain your reference: ${reference}`;
+    if (alertError) {
+      alertError.innerHTML = `
+        <strong>Verification Pending:</strong><br>
+        ${networkMsg}
+      `;
+      alertError.classList.add('show');
+    }
+    if (window.showToast) window.showToast('Network error verifying payment.', 'error');
   } finally {
     if (btnGiveNow) {
       btnGiveNow.disabled = false;
