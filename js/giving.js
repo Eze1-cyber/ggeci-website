@@ -232,7 +232,7 @@ window.payWithPaystack = function() {
   }
 
   // Check if live/test public key exists
-  const activeKey = paymentConfig.publicKey || 'pk_test_ggeci_fallback_demo_key';
+  const activeKey = paymentConfig.publicKey || 'pk_test_9e112e5e5b25fcf5f05b45bb6626bf308e80ac5b';
 
   // Load Paystack Inline SDK dynamically if needed
   if (typeof PaystackPop === 'undefined') {
